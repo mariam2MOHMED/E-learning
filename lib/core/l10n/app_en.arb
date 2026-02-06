@@ -1,0 +1,14 @@
+{
+  "@@locale": "en",
+  "onlineExam": "online Exam",
+
+  "noRoutefound": "No route found",
+  "required": "This field is required",
+  "invalidEmail": "This email is not valid",
+  "invalidPassword":
+  "Password must be at least 8 characters and contain letters and numbers",
+  "passwordNotMatch": "Passwords do not match",
+  "invalidUsername": "Enter valid username",
+  "numbersOnly": "Enter numbers only",
+  "phoneLength": "Phone number must be 11 digits"
+}

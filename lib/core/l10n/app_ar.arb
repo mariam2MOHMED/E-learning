@@ -1,0 +1,13 @@
+{
+
+  "@@locale": "ar",
+  "onlineExam": "امتحان أونلاين",
+  "noRoutefound":"لا يوجد مسار ",
+  "required": "هذا الحقل مطلوب",
+  "invalidEmail": "البريد الإلكتروني غير صحيح",
+  "invalidPassword": "كلمة المرور يجب أن لا تقل عن 8 أحرف وتحتوي على حروف وأرقام",
+  "passwordNotMatch": "كلمتا المرور غير متطابقتين",
+  "invalidUsername": "اسم المستخدم غير صالح",
+  "numbersOnly": "يجب إدخال أرقام فقط",
+  "phoneLength": "رقم الهاتف يجب أن يكون 11 رقم"
+}
