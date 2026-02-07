@@ -102,6 +102,7 @@ class RegisterCubit extends Cubit<RegisterState> {
     lastName.dispose();
     email.dispose();
     password.dispose();
+
     rePassword.dispose();
     phone.dispose();
 
