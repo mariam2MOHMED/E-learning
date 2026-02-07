@@ -79,12 +79,14 @@ class RegisterCubit extends Cubit<RegisterState> {
   }
 
   void _enableValidate() {
-    emit(state.copyWith(autovalidateMode: AutovalidateMode.always));
+    emit(state.copyWith(
+        autovalidateMode: AutovalidateMode.always));
   }
 
   void _validateUserInfo() {
     if (formKey.currentState!.validate()) {
       emit(state.copyWith(isValid: true));
+
       return;
     } else {
       _enableValidate();
