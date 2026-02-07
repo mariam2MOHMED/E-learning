@@ -20,7 +20,7 @@ class RegisterCubit extends Cubit<RegisterState> {
   late TextEditingController lastName;
   late TextEditingController email;
   late TextEditingController password;
-  late TextEditingController repassword;
+  late TextEditingController rePassword;
   late TextEditingController phone;
   late GlobalKey<FormState> formKey;
   Future<void> doIntent({required RegisterIntent intent}) async {
@@ -38,7 +38,7 @@ class RegisterCubit extends Cubit<RegisterState> {
     lastName = TextEditingController();
     email = TextEditingController();
     password = TextEditingController();
-    repassword = TextEditingController();
+    rePassword = TextEditingController();
     phone = TextEditingController();
     formKey= GlobalKey<FormState>();
     // emit(state.copyWith(
@@ -54,7 +54,7 @@ class RegisterCubit extends Cubit<RegisterState> {
       lastName: lastName.text.trim(),
       email: email.text.trim(),
       password: password.text.trim(),
-      rePassword: repassword.text.trim(),
+      rePassword: rePassword.text.trim(),
       phone: phone.text.trim(),
     );
     final result = await _registerUseCase.register(request);
@@ -102,7 +102,7 @@ class RegisterCubit extends Cubit<RegisterState> {
     lastName.dispose();
     email.dispose();
     password.dispose();
-    repassword.dispose();
+    rePassword.dispose();
     phone.dispose();
 
     return super.close();
