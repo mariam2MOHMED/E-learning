@@ -1,0 +1,18 @@
+import 'package:dio/dio.dart';
+import 'package:elearning/feature/auth/api/models/register/register_request.dart';
+import 'package:elearning/feature/auth/api/models/register/register_response.dart';
+import 'package:injectable/injectable.dart';
+import 'package:retrofit/retrofit.dart';
+
+import '../../../../core/constants/end_point_constants.dart';
+part 'auth_api_services.g.dart';
+@RestApi(
+  baseUrl: EndPointsConstants.baseUrl
+)
+@injectable
+abstract class AuthApiServices{
+  @factoryMethod
+factory AuthApiServices(Dio dio)=_AuthApiServices;
+@POST(EndPointsConstants.signUpEndPoint)
+  Future<RegisterResponse> register(RegisterRequest request);
+}

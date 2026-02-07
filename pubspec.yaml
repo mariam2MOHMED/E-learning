@@ -41,6 +41,12 @@ dependencies:
   pretty_dio_logger: ^1.4.0
   shared_preferences: ^2.5.4
   provider:
+  retrofit: ^4.9.0
+  logger: ^2.6.0  # for logging purpose
+  json_annotation: ^4.9.0
+  equatable: ^2.0.8
+  flutter_screenutil: ^5.9.3
+  flutter_bloc: ^9.1.1
 
 dev_dependencies:
   flutter_test:
@@ -55,6 +61,8 @@ dev_dependencies:
   injectable_generator:
     # add build runner if not already added
   build_runner:
+  retrofit_generator: ^10.0.1
+  json_serializable: ^6.10.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

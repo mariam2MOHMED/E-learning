@@ -1,4 +1,6 @@
+import 'package:elearning/core/route/app_routes.dart';
 import 'package:elearning/core/route/routes.dart';
+import 'package:elearning/core/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 
 import 'core/app_language/app_language.dart';
@@ -22,7 +24,8 @@ late AppLanguage appLanguage;
   Widget build(BuildContext context) {
     appLanguage=Provider.of(context);
     return   MaterialApp(
-
+      theme: AppTheme.lightTheme,
+      initialRoute: AppRoutes.register,
       debugShowCheckedModeBanner: false,
       locale: Locale(appLanguage.selectedLocal),
       onGenerateRoute: Routes.generateRoute,

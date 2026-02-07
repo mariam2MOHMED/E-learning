@@ -35,4 +35,58 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get phoneLength => 'Phone number must be 11 digits';
+
+  @override
+  String get signUp => 'Sign up';
+
+  @override
+  String get login => 'Login';
+
+  @override
+  String get username => 'Username';
+
+  @override
+  String get enterUsername => 'Enter your username';
+
+  @override
+  String get firstName => 'First name';
+
+  @override
+  String get enterFirstName => 'Enter first name';
+
+  @override
+  String get lastName => 'Last name';
+
+  @override
+  String get enterLastName => 'Enter last name';
+
+  @override
+  String get email => 'Email';
+
+  @override
+  String get enterEmail => 'Enter your email';
+
+  @override
+  String get password => 'Password';
+
+  @override
+  String get enterPassword => 'Enter password';
+
+  @override
+  String get confirmPassword => 'Confirm password';
+
+  @override
+  String get enterConfirmPassword => 'Confirm password';
+
+  @override
+  String get phoneNumber => 'Phone number';
+
+  @override
+  String get enterPhoneNumber => 'Enter phone number';
+
+  @override
+  String get signupButton => 'Signup';
+
+  @override
+  String get alreadyHaveAccount => 'Already have an account?';
 }

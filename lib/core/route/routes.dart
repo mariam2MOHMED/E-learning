@@ -1,8 +1,7 @@
 import 'package:elearning/core/app_language/app_language.dart';
 import 'package:elearning/core/di/di.dart';
+import 'package:elearning/feature/auth/presentation/view/screens/register_screen.dart';
 import 'package:flutter/material.dart';
-
-
 import '../l10n/app_localizations.dart';
 import 'app_routes.dart';
 
@@ -10,7 +9,13 @@ abstract class Routes{
   static Route generateRoute(RouteSettings setting){
     final url =Uri.parse(setting.name??AppRoutes.noRoute);
     switch(url.path){
-      case AppRoutes.home:
+      case AppRoutes.register:
+
+        return MaterialPageRoute(
+          builder: (_) => const RegisterScreen(),
+
+        );
+
       default :
         return MaterialPageRoute(
          builder: (context)=> Scaffold(
