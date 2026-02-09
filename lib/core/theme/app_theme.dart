@@ -8,7 +8,7 @@ abstract class AppTheme {
       scaffoldBackgroundColor: AppColors.white,
       elevatedButtonTheme: const ElevatedButtonThemeData(
         style: ButtonStyle(
-          backgroundColor: WidgetStatePropertyAll(AppColors.blue),
+      backgroundColor: WidgetStatePropertyAll(AppColors.blue),
           foregroundColor: WidgetStatePropertyAll(AppColors.white),
           fixedSize: WidgetStatePropertyAll(Size(double.infinity, 50)),
           textStyle: WidgetStatePropertyAll(
@@ -22,6 +22,17 @@ abstract class AppTheme {
           fontWeight: FontWeightManager.medium,
           color: AppColors.black,
         ),
+        bodyLarge: TextStyle(
+          fontSize: FontSize.s18,
+          fontWeight: FontWeightManager.medium,
+          color: AppColors.black,
+        ),
+        bodyMedium: TextStyle(
+          fontSize: FontSize.s14,
+          fontWeight: FontWeightManager.medium,
+          color: AppColors.gray,
+        ),
+
       ),
       inputDecorationTheme: InputDecorationTheme(
         labelStyle: const TextStyle(

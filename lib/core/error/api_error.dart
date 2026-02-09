@@ -36,21 +36,28 @@ class ServerFailure extends Failure {
     }
   }
 
-  // will modify
+
 
   factory ServerFailure.fromResponse(int? statusCode, dynamic response) {
+    String message = 'Unknown error occurred';
+
+    if (response is Map<String, dynamic>) {
+      message =
+          response['message']?.toString() ??
+              response['error']?.toString() ??
+              message;
+    } else if (response is String) {
+      message = response;
+    }
+
     if (statusCode == 400 || statusCode == 401 || statusCode == 403) {
-      return ServerFailure(response['error']);
+      return ServerFailure(message);
     } else if (statusCode == 404) {
-      final errorMessage =
-          response['message'] ?? response['error'] ?? 'Unknown error occurred';
-      return ServerFailure(errorMessage);
+      return ServerFailure(message);
     } else if (statusCode == 500) {
       return ServerFailure(ExceptionConstants.internalServer);
     } else {
-      final errorMessage =
-          response['message'] ?? response['error'] ?? 'Unknown error occurred';
-      return ServerFailure(errorMessage);
+      return ServerFailure(message);
     }
   }
 }

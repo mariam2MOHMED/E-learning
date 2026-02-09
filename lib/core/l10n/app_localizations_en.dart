@@ -89,4 +89,18 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get alreadyHaveAccount => 'Already have an account?';
+
+  @override
+  String get forgotPassword => 'Forgot Password';
+
+  @override
+  String get forgotPasswordDesc =>
+      'Please enter the email associated with your account';
+
+  @override
+  String get continueWord => 'Continue';
+
+  @override
+  String get enterEmailSentence =>
+      'Please enter your email associated\n to your account';
 }

@@ -3,25 +3,25 @@ import 'package:elearning/core/validators/validator.dart';
 import 'package:flutter/material.dart';
 
 class UserPersonalInfoWidget extends StatelessWidget {
-  const UserPersonalInfoWidget({super.key, 
+   UserPersonalInfoWidget({super.key,
     required this.email, required this.password,
-    required this.phone, required this.rePassword});
+    required this.phone, required this.rePassword,this.onChanged});
   final TextEditingController email;
   final TextEditingController password;
   final TextEditingController phone;
   final TextEditingController rePassword;
-
+  void Function(String)? onChanged;
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         TextFormField(
           controller: email,
-          validator: Validator.validateUsername,
+          onChanged: onChanged,
+          validator: Validator.validateEmail,
           decoration: InputDecoration(
             labelText: AppLocalizations.of(context)!.email,
             hintText: AppLocalizations.of(context)!.enterEmail,
-
 
           ),
         ),
@@ -30,6 +30,8 @@ class UserPersonalInfoWidget extends StatelessWidget {
           children: [
             Expanded(child: TextFormField(
               controller: password,
+              onChanged: onChanged,
+
               validator: Validator.validatePassword,
               decoration: InputDecoration(
                 labelText: AppLocalizations.of(context)!.password,
@@ -40,6 +42,8 @@ class UserPersonalInfoWidget extends StatelessWidget {
             const SizedBox(width: 16.0,),
             Expanded(child:       TextFormField(
               controller: rePassword,
+              onChanged: onChanged,
+
               validator: (_) => Validator.validateConfirmPassword(
                 password.text,
                 rePassword.text,
@@ -55,6 +59,8 @@ class UserPersonalInfoWidget extends StatelessWidget {
 
         TextFormField(
           controller: phone,
+          onChanged: onChanged,
+
           validator: Validator.validatePhoneNumber,
           decoration: InputDecoration(
             labelText: AppLocalizations.of(context)!.phoneNumber,

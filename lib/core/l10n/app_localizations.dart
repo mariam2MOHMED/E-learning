@@ -259,6 +259,30 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Already have an account?'**
   String get alreadyHaveAccount;
+
+  /// No description provided for @forgotPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Forgot Password'**
+  String get forgotPassword;
+
+  /// No description provided for @forgotPasswordDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Please enter the email associated with your account'**
+  String get forgotPasswordDesc;
+
+  /// No description provided for @continueWord.
+  ///
+  /// In en, this message translates to:
+  /// **'Continue'**
+  String get continueWord;
+
+  /// No description provided for @enterEmailSentence.
+  ///
+  /// In en, this message translates to:
+  /// **'Please enter your email associated\n to your account'**
+  String get enterEmailSentence;
 }
 
 class _AppLocalizationsDelegate

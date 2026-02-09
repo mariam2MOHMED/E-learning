@@ -1,3 +1,4 @@
+
 import 'package:elearning/core/enum/request_state.dart';
 import 'package:elearning/core/error/response_exceptions.dart';
 import 'package:elearning/core/result/result.dart';
@@ -8,7 +9,6 @@ import 'package:elearning/feature/auth/presentation/view_model/register/register
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:injectable/injectable.dart';
-
 import '../../../domain/use_case/register_use_case.dart';
 @injectable
 class RegisterCubit extends Cubit<RegisterState> {
@@ -28,8 +28,18 @@ class RegisterCubit extends Cubit<RegisterState> {
 
       case RegisterInitializationIntent():
         _init();
+        break;
       case RegisterFormIntent():
        _register();
+       break;
+      case ValidateBasicInfoIntent():
+
+        _validateUserInfo();
+        break;
+      case IsTypingIntent():
+
+        _isTyping();
+        break;
     }
   }
   void _init() {
@@ -41,9 +51,9 @@ class RegisterCubit extends Cubit<RegisterState> {
     rePassword = TextEditingController();
     phone = TextEditingController();
     formKey= GlobalKey<FormState>();
-    // emit(state.copyWith(
-    //   autovalidateMode: AutovalidateMode.disabled
-    // ));
+    emit(state.copyWith(
+      autovalidateMode: AutovalidateMode.disabled
+    ));
   }
 
   Future<void> _register() async {
@@ -80,7 +90,7 @@ class RegisterCubit extends Cubit<RegisterState> {
 
   void _enableValidate() {
     emit(state.copyWith(
-        autovalidateMode: AutovalidateMode.always));
+        autovalidateMode: AutovalidateMode.onUserInteraction));
   }
 
   void _validateUserInfo() {
@@ -98,14 +108,17 @@ class RegisterCubit extends Cubit<RegisterState> {
   Future<void> close() {
     userName.dispose();
     firstName.dispose();
-
     lastName.dispose();
     email.dispose();
     password.dispose();
-
     rePassword.dispose();
     phone.dispose();
 
     return super.close();
+  }
+  void _isTyping(){
+    final isFilled=userName.text.isNotEmpty&&firstName.text.isNotEmpty&&lastName.text.isNotEmpty
+        &&email.text.isNotEmpty&&phone.text.isNotEmpty&&password.text.isNotEmpty &&phone.text.isNotEmpty&&rePassword.text.isNotEmpty;
+    emit(state.copyWith(isTyping: isFilled));
   }
 }

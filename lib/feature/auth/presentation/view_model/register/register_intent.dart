@@ -7,3 +7,9 @@ final class RegisterInitializationIntent extends RegisterIntent {
 final class RegisterFormIntent extends RegisterIntent {
   const RegisterFormIntent();
 }
+final class ValidateBasicInfoIntent extends RegisterIntent {
+  const ValidateBasicInfoIntent();
+}
+final class IsTypingIntent extends RegisterIntent {
+  const IsTypingIntent();
+}

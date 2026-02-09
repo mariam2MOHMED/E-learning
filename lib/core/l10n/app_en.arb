@@ -36,6 +36,11 @@
   "enterPhoneNumber": "Enter phone number",
 
   "signupButton": "Signup",
-  "alreadyHaveAccount": "Already have an account?"
+  "alreadyHaveAccount": "Already have an account?",
+  "forgotPassword": "Forgot Password",
+  "forgotPasswordDesc": "Please enter the email associated with your account",
+  "continueWord": "Continue",
+  "enterEmailSentence": "Please enter your email associated\n to your account"
+
 
 }

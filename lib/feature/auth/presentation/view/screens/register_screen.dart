@@ -5,6 +5,7 @@ import 'package:elearning/feature/auth/presentation/view_model/register/register
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../../../core/theme/app_colors.dart';
 import '../../view_model/register/register_intent.dart';
 import '../widget/user_info_wid.dart';
 import '../widget/user_personal_info_widget.dart';
@@ -28,10 +29,13 @@ class RegisterScreen extends StatelessWidget {
         padding: const EdgeInsetsDirectional.symmetric(horizontal: 16),
         child: 
        BlocProvider(create:
-           (context)=>getIt<RegisterCubit>()..doIntent(intent: const RegisterInitializationIntent()),
+           (context)=>getIt<RegisterCubit>()..doIntent(intent:
+           const RegisterInitializationIntent()),
        child:  BlocConsumer<RegisterCubit, RegisterState>(
          listener: (context,state){
+           // final registerCubit = BlocProvider.of<RegisterCubit>(context);
            if (state.registerStatus.isSuccess){
+
              Navigator.push(context, MaterialPageRoute(builder: (context)=>
              const Scaffold()));
            }
@@ -52,22 +56,36 @@ class RegisterScreen extends StatelessWidget {
                    firstName: registerCubit.firstName,
                    userName: registerCubit.userName,
                    lastName: registerCubit.lastName,
+                   onChanged: (_){
+                     registerCubit.doIntent(intent: const IsTypingIntent());
+
+                   },
                  ),
                  const SizedBox(height: 16.0),
 
                  UserPersonalInfoWidget(
                    phone: registerCubit.phone,
                    password: registerCubit.password,
-                   rePassword: registerCubit.repassword,
+                   rePassword: registerCubit.rePassword,
                    email: registerCubit.email,
+                   onChanged: (_){
+                     registerCubit.doIntent(intent: const IsTypingIntent());
+                   },
                  ),
                  const SizedBox(height: 32.0),
                  ElevatedButton(
-                   onPressed: () {
+                   style: ElevatedButton.styleFrom(
+                     backgroundColor: state.isTyping?AppColors.grey:AppColors.blue,
+                     fixedSize:  Size(MediaQuery.of(context).size.width, 50)
+                   ),
+                   onPressed:state.isTyping?() {
+                     registerCubit.doIntent(
+                       intent: const ValidateBasicInfoIntent(),
+                     );
                      registerCubit.doIntent(
                        intent: const RegisterFormIntent(),
                      );
-                   },
+                   }:null,
                    child: Text(AppLocalizations.of(context)!.signUp),
                  ),
                ],

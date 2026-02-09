@@ -8,11 +8,12 @@ class RegisterState extends Equatable {
   final StateStatus<UserEntity> registerStatus;
   final AutovalidateMode autovalidateMode;
   final bool isValid;
-
+  final bool isTyping;
   const RegisterState({
     this.autovalidateMode = AutovalidateMode.disabled,
     this.isValid = false,
     this.registerStatus = const StateStatus.initial(),
+    this.isTyping=false
   });
 
   @override
@@ -20,14 +21,17 @@ class RegisterState extends Equatable {
     bool? isValid,
     StateStatus<UserEntity>? registerStatus,
     AutovalidateMode? autovalidateMode,
+     bool? isTyping
   }) {
     return RegisterState(
       autovalidateMode: autovalidateMode ?? this.autovalidateMode,
       registerStatus: registerStatus ?? this.registerStatus,
       isValid: isValid ?? this.isValid,
+      isTyping: isTyping??this.isTyping
     );
   }
 
   @override
-  List<Object?> get props => [registerStatus, autovalidateMode, isValid];
+  List<Object?> get props =>
+      [registerStatus, autovalidateMode, isValid, isTyping];
 }

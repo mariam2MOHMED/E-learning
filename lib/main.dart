@@ -25,7 +25,7 @@ late AppLanguage appLanguage;
     appLanguage=Provider.of(context);
     return   MaterialApp(
       theme: AppTheme.lightTheme,
-      initialRoute: AppRoutes.register,
+      initialRoute: AppRoutes.forgetPassword,
       debugShowCheckedModeBanner: false,
       locale: Locale(appLanguage.selectedLocal),
       onGenerateRoute: Routes.generateRoute,

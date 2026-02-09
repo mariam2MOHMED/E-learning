@@ -36,6 +36,11 @@
   "enterPhoneNumber": "أدخل رقم الهاتف",
 
   "signupButton": "إنشاء حساب",
-  "alreadyHaveAccount": "لديك حساب بالفعل؟"
+  "alreadyHaveAccount": "لديك حساب بالفعل؟",
+  "forgetPassword": "نسيت كلمة المرور",
+  "forgetPasswordDesc": "من فضلك أدخل البريد الإلكتروني المرتبط بحسابك",
+
+  "continueWord": "متابعة",
+  "enterEmailSentence": "من فضلك أدخل البريد الإلكتروني /n المرتبط بحسابك"
 
 }

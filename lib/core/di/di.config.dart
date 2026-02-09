@@ -20,6 +20,8 @@ import '../../feature/auth/api/data_source/auth_data_source_impl.dart' as _i596;
 import '../../feature/auth/data/data_source/auth_data_source.dart' as _i868;
 import '../../feature/auth/data/repositry/auth_repo_impl.dart' as _i1069;
 import '../../feature/auth/domain/repositry/auth_repo.dart' as _i569;
+import '../../feature/auth/domain/use_case/forget_password_use_case.dart'
+    as _i748;
 import '../../feature/auth/domain/use_case/register_use_case.dart' as _i313;
 import '../../feature/auth/presentation/view_model/register/register_cubit.dart'
     as _i987;
@@ -53,6 +55,9 @@ extension GetItInjectableX on _i174.GetIt {
     );
     gh.factory<_i569.AuthRepo>(
       () => _i1069.AuthRepoImpl(gh<_i868.AuthDataSource>()),
+    );
+    gh.factory<_i748.ForgetPasswordUseCase>(
+      () => _i748.ForgetPasswordUseCase(gh<_i569.AuthRepo>()),
     );
     gh.factory<_i313.RegisterUseCase>(
       () => _i313.RegisterUseCase(gh<_i569.AuthRepo>()),

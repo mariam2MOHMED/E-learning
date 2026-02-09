@@ -89,4 +89,18 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get alreadyHaveAccount => 'لديك حساب بالفعل؟';
+
+  @override
+  String get forgotPassword => 'Forgot Password';
+
+  @override
+  String get forgotPasswordDesc =>
+      'Please enter the email associated with your account';
+
+  @override
+  String get continueWord => 'متابعة';
+
+  @override
+  String get enterEmailSentence =>
+      'من فضلك أدخل البريد الإلكتروني /n المرتبط بحسابك';
 }

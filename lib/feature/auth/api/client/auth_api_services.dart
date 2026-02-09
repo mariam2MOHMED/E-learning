@@ -1,4 +1,6 @@
 import 'package:dio/dio.dart';
+import 'package:elearning/feature/auth/api/models/forget_password/forget_password_request.dart';
+import 'package:elearning/feature/auth/api/models/forget_password/forget_password_response.dart';
 import 'package:elearning/feature/auth/api/models/register/register_request.dart';
 import 'package:elearning/feature/auth/api/models/register/register_response.dart';
 import 'package:injectable/injectable.dart';
@@ -15,4 +17,7 @@ abstract class AuthApiServices{
 factory AuthApiServices(Dio dio)=_AuthApiServices;
 @POST(EndPointsConstants.signUpEndPoint)
   Future<RegisterResponse> register(RegisterRequest request);
+@POST(EndPointsConstants.forgetPassEndPoint)
+  Future<ForgetPasswordReaponse>forgetPassword(@Body()
+ForgetPasswordRequest request);
 }
