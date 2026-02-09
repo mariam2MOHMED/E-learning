@@ -2,17 +2,18 @@ import 'package:elearning/core/l10n/app_localizations.dart';
 import 'package:flutter/material.dart';
 
 class ForgetPasswordHeader extends StatelessWidget {
-  const ForgetPasswordHeader({super.key});
-
+  const ForgetPasswordHeader({super.key,required this.title,
+  required this.subTitle});
+final String title;final String subTitle;
   @override
   Widget build(BuildContext context) {
     return Column(
 
       children: [
-        Text(AppLocalizations.of(context)!.forgotPassword,
+        Text(title,
           style: Theme.of(context).textTheme.bodyLarge,),
         const SizedBox(height: 16.0,),
-        Text(AppLocalizations.of(context)!.enterEmailSentence,
+        Text(subTitle,
           textAlign: TextAlign.center,
 
           style: Theme.of(context).textTheme.bodyMedium,),

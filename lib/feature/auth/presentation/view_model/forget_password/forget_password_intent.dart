@@ -9,3 +9,15 @@ final class ForgetPasswordFormIntent
     extends ForgetPasswordIntent {
   const ForgetPasswordFormIntent();
 }
+final class IsEmailTypedIntent
+    extends ForgetPasswordIntent {
+  const IsEmailTypedIntent();
+}
+final class VerifyCodeInitializationIntent
+    extends ForgetPasswordIntent {
+  const VerifyCodeInitializationIntent();
+}
+final class VerifyCodeIntent
+    extends ForgetPasswordIntent {
+  const VerifyCodeIntent();
+}

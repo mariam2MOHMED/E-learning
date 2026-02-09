@@ -103,4 +103,23 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get enterEmailSentence =>
       'Please enter your email associated\n to your account';
+
+  @override
+  String get emailSentSuccessfully => 'Email sent successfully';
+
+  @override
+  String get emailVerification => 'Email verification';
+
+  @override
+  String get enterVerificationCode =>
+      'Please enter your code that was sent to your\n email address';
+
+  @override
+  String get invalidCode => 'Invalid code';
+
+  @override
+  String get didNotReceiveCode => 'Didn\'t receive code?';
+
+  @override
+  String get resend => 'Resend';
 }

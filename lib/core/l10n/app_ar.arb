@@ -41,6 +41,11 @@
   "forgetPasswordDesc": "من فضلك أدخل البريد الإلكتروني المرتبط بحسابك",
 
   "continueWord": "متابعة",
-  "enterEmailSentence": "من فضلك أدخل البريد الإلكتروني /n المرتبط بحسابك"
-
+  "enterEmailSentence": "من فضلك أدخل البريد الإلكتروني /n المرتبط بحسابك",
+  "emailSentSuccessfully": "تم إرسال البريد الإلكتروني بنجاح",
+  "emailVerification": "تأكيد البريد الإلكتروني",
+  "enterVerificationCode": "من فضلك أدخل رمز التحقق الذي تم إرساله إلى بريدك الإلكتروني",
+  "invalidCode": "رمز غير صحيح",
+  "didNotReceiveCode": "لم يصلك الرمز؟",
+  "resend": "إعادة الإرسال"
 }

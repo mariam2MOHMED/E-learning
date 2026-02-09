@@ -103,4 +103,23 @@ class AppLocalizationsAr extends AppLocalizations {
   @override
   String get enterEmailSentence =>
       'من فضلك أدخل البريد الإلكتروني /n المرتبط بحسابك';
+
+  @override
+  String get emailSentSuccessfully => 'تم إرسال البريد الإلكتروني بنجاح';
+
+  @override
+  String get emailVerification => 'تأكيد البريد الإلكتروني';
+
+  @override
+  String get enterVerificationCode =>
+      'من فضلك أدخل رمز التحقق الذي تم إرساله إلى بريدك الإلكتروني';
+
+  @override
+  String get invalidCode => 'رمز غير صحيح';
+
+  @override
+  String get didNotReceiveCode => 'لم يصلك الرمز؟';
+
+  @override
+  String get resend => 'إعادة الإرسال';
 }

@@ -3,6 +3,7 @@ import 'package:elearning/core/di/di.dart';
 import 'package:elearning/feature/auth/presentation/view/screens/forget_password_screen.dart';
 import 'package:elearning/feature/auth/presentation/view/screens/register_screen.dart';
 import 'package:flutter/material.dart';
+import '../../feature/auth/presentation/view/screens/verfiy_code_screen.dart';
 import '../l10n/app_localizations.dart';
 import 'app_routes.dart';
 
@@ -20,6 +21,12 @@ abstract class Routes{
 
         return MaterialPageRoute(
           builder: (_) => const ForgetPasswordScreen(),
+
+        );
+      case AppRoutes.verifyPassword:
+
+        return MaterialPageRoute(
+          builder: (_) => const VerifyCodeScreen(),
 
         );
       default :

@@ -3,6 +3,8 @@ import 'package:elearning/core/safe_api_call/safe_api_call.dart';
 import 'package:elearning/feature/auth/api/client/auth_api_services.dart';
 import 'package:elearning/feature/auth/api/models/forget_password/forget_password_request.dart';
 import 'package:elearning/feature/auth/api/models/forget_password/forget_password_response.dart';
+import 'package:elearning/feature/auth/api/models/forget_password/reset_code_request.dart';
+import 'package:elearning/feature/auth/api/models/forget_password/reset_code_response.dart';
 
 import 'package:elearning/feature/auth/api/models/register/register_request.dart';
 
@@ -28,6 +30,13 @@ return safeCall(()async{
       (ForgetPasswordRequest request) async {
     return safeCall(()async{
      return await _authApiServices.forgetPassword(request);
+    });
+  }
+
+  @override
+  Future<Result<ResetCodeResponse>> verifyCode(ResetCodeRequest request) {
+    return safeCall(()async{
+      return await _authApiServices.verifyCode(request);
     });
   }
 }

@@ -1,6 +1,8 @@
 import 'package:dio/dio.dart';
 import 'package:elearning/feature/auth/api/models/forget_password/forget_password_request.dart';
 import 'package:elearning/feature/auth/api/models/forget_password/forget_password_response.dart';
+import 'package:elearning/feature/auth/api/models/forget_password/reset_code_request.dart';
+import 'package:elearning/feature/auth/api/models/forget_password/reset_code_response.dart';
 import 'package:elearning/feature/auth/api/models/register/register_request.dart';
 import 'package:elearning/feature/auth/api/models/register/register_response.dart';
 import 'package:injectable/injectable.dart';
@@ -20,4 +22,7 @@ factory AuthApiServices(Dio dio)=_AuthApiServices;
 @POST(EndPointsConstants.forgetPassEndPoint)
   Future<ForgetPasswordReaponse>forgetPassword(@Body()
 ForgetPasswordRequest request);
+  @POST(EndPointsConstants.verifyCodeEndPoint)
+  Future<ResetCodeResponse>verifyCode(@Body()
+  ResetCodeRequest request);
 }

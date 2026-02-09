@@ -40,7 +40,11 @@
   "forgotPassword": "Forgot Password",
   "forgotPasswordDesc": "Please enter the email associated with your account",
   "continueWord": "Continue",
-  "enterEmailSentence": "Please enter your email associated\n to your account"
-
-
+  "enterEmailSentence": "Please enter your email associated\n to your account",
+  "emailSentSuccessfully": "Email sent successfully",
+  "emailVerification": "Email verification",
+  "enterVerificationCode": "Please enter your code that was sent to your\n email address",
+  "invalidCode": "Invalid code",
+  "didNotReceiveCode": "Didn't receive code?",
+  "resend": "Resend"
 }

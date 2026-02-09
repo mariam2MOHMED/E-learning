@@ -8,7 +8,7 @@ abstract class AppTheme {
       scaffoldBackgroundColor: AppColors.white,
       elevatedButtonTheme: const ElevatedButtonThemeData(
         style: ButtonStyle(
-      backgroundColor: WidgetStatePropertyAll(AppColors.blue),
+      //backgroundColor: WidgetStatePropertyAll(AppColors.blue),
           foregroundColor: WidgetStatePropertyAll(AppColors.white),
           fixedSize: WidgetStatePropertyAll(Size(double.infinity, 50)),
           textStyle: WidgetStatePropertyAll(
@@ -17,6 +17,7 @@ abstract class AppTheme {
         ),
       ),
       textTheme: const TextTheme(
+
         titleMedium: TextStyle(
           fontSize: FontSize.s20,
           fontWeight: FontWeightManager.medium,
@@ -26,6 +27,11 @@ abstract class AppTheme {
           fontSize: FontSize.s18,
           fontWeight: FontWeightManager.medium,
           color: AppColors.black,
+        ),
+        headlineMedium: TextStyle(
+          fontSize: FontSize.s18,
+          fontWeight: FontWeightManager.medium,
+          color: AppColors.white
         ),
         bodyMedium: TextStyle(
           fontSize: FontSize.s14,
