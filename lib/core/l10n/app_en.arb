@@ -35,6 +35,7 @@
   "phoneNumber": "Phone number",
   "enterPhoneNumber": "Enter phone number",
   "registerSuccess": "Registration completed successfully",
+  "loginSuccess": "Login completed successfully",
 
   "signupButton": "Signup",
   "alreadyHaveAccount": "Already have an account?",

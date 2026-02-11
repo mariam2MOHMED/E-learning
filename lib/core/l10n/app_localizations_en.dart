@@ -88,6 +88,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get registerSuccess => 'Registration completed successfully';
 
   @override
+  String get loginSuccess => 'Login completed successfully';
+
+  @override
   String get signupButton => 'Signup';
 
   @override

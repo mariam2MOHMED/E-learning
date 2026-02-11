@@ -5,11 +5,14 @@ import 'package:elearning/feature/auth/api/models/forget_password/reset_code_req
 import 'package:elearning/feature/auth/api/models/forget_password/reset_code_response.dart';
 import 'package:elearning/feature/auth/api/models/forget_password/reset_password_request.dart';
 import 'package:elearning/feature/auth/api/models/forget_password/reset_password_response.dart';
+import 'package:elearning/feature/auth/api/models/login/login_request.dart';
 import 'package:elearning/feature/auth/api/models/register/register_request.dart';
 import 'package:elearning/feature/auth/data/data_source/auth_data_source.dart';
 import 'package:elearning/feature/auth/domain/entity/user_entity.dart';
 import 'package:elearning/feature/auth/domain/repositry/auth_repo.dart';
 import 'package:injectable/injectable.dart';
+
+import '../../domain/entity/auth_entity.dart';
 @Injectable(as:AuthRepo )
 class AuthRepoImpl implements AuthRepo{
   final AuthDataSource _authDataSource;
@@ -35,6 +38,11 @@ return await _authDataSource.forgetPassword(request);
   Future<Result<ResetPasswordResponse>> resetPassword(ResetPasswordRequest request) async{
     return await _authDataSource.resetPassword(request);
 
+  }
+
+  @override
+  Future<Result<AuthEntity>> login(LoginRequest request)async {
+   return await _authDataSource.login(request);
   }
 
 }

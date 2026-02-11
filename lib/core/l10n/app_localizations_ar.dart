@@ -88,6 +88,9 @@ class AppLocalizationsAr extends AppLocalizations {
   String get registerSuccess => 'تم إنشاء الحساب بنجاح';
 
   @override
+  String get loginSuccess => 'تم تسجيل الدخول بنجاح';
+
+  @override
   String get signupButton => 'إنشاء حساب';
 
   @override

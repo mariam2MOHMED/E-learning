@@ -254,6 +254,12 @@ abstract class AppLocalizations {
   /// **'Registration completed successfully'**
   String get registerSuccess;
 
+  /// No description provided for @loginSuccess.
+  ///
+  /// In en, this message translates to:
+  /// **'Login completed successfully'**
+  String get loginSuccess;
+
   /// No description provided for @signupButton.
   ///
   /// In en, this message translates to:

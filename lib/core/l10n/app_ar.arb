@@ -35,6 +35,7 @@
   "phoneNumber": "رقم الهاتف",
   "enterPhoneNumber": "أدخل رقم الهاتف",
   "registerSuccess": "تم إنشاء الحساب بنجاح",
+  "loginSuccess": "تم تسجيل الدخول بنجاح",
 
   "signupButton": "إنشاء حساب",
   "alreadyHaveAccount": "لديك حساب بالفعل؟",

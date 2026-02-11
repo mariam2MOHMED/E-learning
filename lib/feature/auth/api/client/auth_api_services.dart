@@ -5,12 +5,14 @@ import 'package:elearning/feature/auth/api/models/forget_password/reset_code_req
 import 'package:elearning/feature/auth/api/models/forget_password/reset_code_response.dart';
 import 'package:elearning/feature/auth/api/models/forget_password/reset_password_request.dart';
 import 'package:elearning/feature/auth/api/models/forget_password/reset_password_response.dart';
+import 'package:elearning/feature/auth/api/models/login/login_response.dart';
 import 'package:elearning/feature/auth/api/models/register/register_request.dart';
 import 'package:elearning/feature/auth/api/models/register/register_response.dart';
 import 'package:injectable/injectable.dart';
 import 'package:retrofit/retrofit.dart';
 
 import '../../../../core/constants/end_point_constants.dart';
+import '../models/login/login_request.dart';
 part 'auth_api_services.g.dart';
 @RestApi(
   baseUrl: EndPointsConstants.baseUrl
@@ -21,6 +23,8 @@ abstract class AuthApiServices{
 factory AuthApiServices(Dio dio)=_AuthApiServices;
 @POST(EndPointsConstants.signUpEndPoint)
   Future<RegisterResponse> register( @Body()RegisterRequest request);
+  @POST(EndPointsConstants.signInEndPoint)
+  Future<LoginResponse> signIn( @Body()LoginRequest request);
 @POST(EndPointsConstants.forgetPassEndPoint)
   Future<ForgetPasswordReaponse>forgetPassword(@Body()
 ForgetPasswordRequest request);

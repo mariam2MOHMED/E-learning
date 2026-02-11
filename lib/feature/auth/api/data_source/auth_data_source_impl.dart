@@ -7,6 +7,7 @@ import 'package:elearning/feature/auth/api/models/forget_password/reset_code_req
 import 'package:elearning/feature/auth/api/models/forget_password/reset_code_response.dart';
 import 'package:elearning/feature/auth/api/models/forget_password/reset_password_request.dart';
 import 'package:elearning/feature/auth/api/models/forget_password/reset_password_response.dart';
+import 'package:elearning/feature/auth/api/models/login/login_request.dart';
 
 import 'package:elearning/feature/auth/api/models/register/register_request.dart';
 
@@ -14,6 +15,7 @@ import 'package:elearning/feature/auth/domain/entity/user_entity.dart';
 import 'package:injectable/injectable.dart';
 
 import '../../data/data_source/auth_data_source.dart';
+import '../../domain/entity/auth_entity.dart';
 @Injectable(as:AuthDataSource)
 class AuthDataSourceImpl implements AuthDataSource{
   final AuthApiServices _authApiServices;
@@ -46,6 +48,14 @@ return safeCall(()async{
   Future<Result<ResetPasswordResponse>> resetPassword(ResetPasswordRequest request) {
     return safeCall(()async{
       return await _authApiServices.resetPassword(request);
+    });
+  }
+
+  @override
+  Future<Result<AuthEntity>> login(LoginRequest request) {
+    return safeCall(()async{
+      final user= await _authApiServices.signIn(request);
+      return user.toEntity();
     });
   }
 }
