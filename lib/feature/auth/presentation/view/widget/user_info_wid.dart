@@ -3,7 +3,8 @@ import 'package:elearning/core/validators/validator.dart';
 import 'package:flutter/material.dart';
 
 class UserInfoWidget extends StatelessWidget {
-   UserInfoWidget({super.key, required this.userName, this.onChanged,required this.firstName, required this.lastName});
+   UserInfoWidget({super.key, required this.userName, this.onChanged,
+     required this.firstName, required this.lastName});
 final TextEditingController userName;
   final TextEditingController firstName;
   final TextEditingController lastName;

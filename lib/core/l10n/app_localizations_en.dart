@@ -85,6 +85,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get enterPhoneNumber => 'Enter phone number';
 
   @override
+  String get registerSuccess => 'Registration completed successfully';
+
+  @override
   String get signupButton => 'Signup';
 
   @override
@@ -122,4 +125,20 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get resend => 'Resend';
+
+  @override
+  String get codeSentSuccessfully => 'Code sent successfully';
+
+  @override
+  String get passwordValidation =>
+      'Password must not be empty and must contain\n at least 6 characters, including one\n uppercase letter and one number';
+
+  @override
+  String get resetPassword => 'Reset Password';
+
+  @override
+  String get newPassword => 'New Password';
+
+  @override
+  String get passwordResetSuccessfully => 'Password reset successfully';
 }

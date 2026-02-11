@@ -2,6 +2,7 @@ import 'package:elearning/core/app_language/app_language.dart';
 import 'package:elearning/core/di/di.dart';
 import 'package:elearning/feature/auth/presentation/view/screens/forget_password_screen.dart';
 import 'package:elearning/feature/auth/presentation/view/screens/register_screen.dart';
+import 'package:elearning/feature/auth/presentation/view/screens/reset_password_screen.dart';
 import 'package:flutter/material.dart';
 import '../../feature/auth/presentation/view/screens/verfiy_code_screen.dart';
 import '../l10n/app_localizations.dart';
@@ -24,9 +25,19 @@ abstract class Routes{
 
         );
       case AppRoutes.verifyPassword:
-
+//final email=setting.arguments as String;
         return MaterialPageRoute(
-          builder: (_) => const VerifyCodeScreen(),
+          builder: (_) =>   const VerifyCodeScreen(
+         //   email: email,
+          ),
+
+        );
+      case AppRoutes.resetPassword:
+  //      final email=setting.arguments as String;
+        return MaterialPageRoute(
+          builder: (_) =>  const ResetPasswordScreen(
+         //   email: email,
+          ),
 
         );
       default :

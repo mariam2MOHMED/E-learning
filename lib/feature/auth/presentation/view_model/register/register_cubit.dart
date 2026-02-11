@@ -1,4 +1,3 @@
-
 import 'package:elearning/core/enum/request_state.dart';
 import 'package:elearning/core/error/response_exceptions.dart';
 import 'package:elearning/core/result/result.dart';
@@ -10,6 +9,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:injectable/injectable.dart';
 import '../../../domain/use_case/register_use_case.dart';
+
 @injectable
 class RegisterCubit extends Cubit<RegisterState> {
   final RegisterUseCase _registerUseCase;
@@ -23,25 +23,24 @@ class RegisterCubit extends Cubit<RegisterState> {
   late TextEditingController rePassword;
   late TextEditingController phone;
   late GlobalKey<FormState> formKey;
-  Future<void> doIntent({required RegisterIntent intent}) async {
-    switch(intent){
 
+  Future<void> doIntent({required RegisterIntent intent}) async {
+    switch (intent) {
       case RegisterInitializationIntent():
         _init();
         break;
       case RegisterFormIntent():
-       _register();
-       break;
+        _register();
+        break;
       case ValidateBasicInfoIntent():
-
-        _validateUserInfo();
+        _enableValidate();
         break;
       case IsTypingIntent():
-
         _isTyping();
         break;
     }
   }
+
   void _init() {
     userName = TextEditingController();
     firstName = TextEditingController();
@@ -50,10 +49,8 @@ class RegisterCubit extends Cubit<RegisterState> {
     password = TextEditingController();
     rePassword = TextEditingController();
     phone = TextEditingController();
-    formKey= GlobalKey<FormState>();
-    emit(state.copyWith(
-      autovalidateMode: AutovalidateMode.disabled
-    ));
+    formKey = GlobalKey<FormState>();
+    emit(state.copyWith(autovalidateMode: AutovalidateMode.disabled));
   }
 
   Future<void> _register() async {
@@ -67,7 +64,13 @@ class RegisterCubit extends Cubit<RegisterState> {
       rePassword: rePassword.text.trim(),
       phone: phone.text.trim(),
     );
+
+    if (!formKey.currentState!.validate()) {
+      _enableValidate(); // optional but recommended UX
+      return;
+    }
     final result = await _registerUseCase.register(request);
+
     switch (result) {
       case SuccessResult<UserEntity>():
         emit(
@@ -89,19 +92,7 @@ class RegisterCubit extends Cubit<RegisterState> {
   }
 
   void _enableValidate() {
-    emit(state.copyWith(
-        autovalidateMode: AutovalidateMode.onUserInteraction));
-  }
-
-  void _validateUserInfo() {
-    if (formKey.currentState!.validate()) {
-      emit(state.copyWith(isValid: true));
-
-      return;
-    } else {
-      _enableValidate();
-      emit(state.copyWith(isValid: false));
-    }
+    emit(state.copyWith(autovalidateMode: AutovalidateMode.always));
   }
 
   @override
@@ -113,12 +104,18 @@ class RegisterCubit extends Cubit<RegisterState> {
     password.dispose();
     rePassword.dispose();
     phone.dispose();
-
     return super.close();
   }
-  void _isTyping(){
-    final isFilled=userName.text.isNotEmpty&&firstName.text.isNotEmpty&&lastName.text.isNotEmpty
-        &&email.text.isNotEmpty&&phone.text.isNotEmpty&&password.text.isNotEmpty &&phone.text.isNotEmpty&&rePassword.text.isNotEmpty;
+
+  void _isTyping() {
+    final isFilled =
+        userName.text.isNotEmpty &&
+        firstName.text.isNotEmpty &&
+        lastName.text.isNotEmpty &&
+        email.text.isNotEmpty &&
+        phone.text.isNotEmpty &&
+        password.text.isNotEmpty &&
+        rePassword.text.isNotEmpty;
     emit(state.copyWith(isTyping: isFilled));
   }
 }

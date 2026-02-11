@@ -248,6 +248,12 @@ abstract class AppLocalizations {
   /// **'Enter phone number'**
   String get enterPhoneNumber;
 
+  /// No description provided for @registerSuccess.
+  ///
+  /// In en, this message translates to:
+  /// **'Registration completed successfully'**
+  String get registerSuccess;
+
   /// No description provided for @signupButton.
   ///
   /// In en, this message translates to:
@@ -319,6 +325,36 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Resend'**
   String get resend;
+
+  /// No description provided for @codeSentSuccessfully.
+  ///
+  /// In en, this message translates to:
+  /// **'Code sent successfully'**
+  String get codeSentSuccessfully;
+
+  /// No description provided for @passwordValidation.
+  ///
+  /// In en, this message translates to:
+  /// **'Password must not be empty and must contain\n at least 6 characters, including one\n uppercase letter and one number'**
+  String get passwordValidation;
+
+  /// No description provided for @resetPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Reset Password'**
+  String get resetPassword;
+
+  /// No description provided for @newPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'New Password'**
+  String get newPassword;
+
+  /// No description provided for @passwordResetSuccessfully.
+  ///
+  /// In en, this message translates to:
+  /// **'Password reset successfully'**
+  String get passwordResetSuccessfully;
 }
 
 class _AppLocalizationsDelegate

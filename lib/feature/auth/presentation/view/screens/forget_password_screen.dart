@@ -68,7 +68,7 @@ autovalidateMode: state.autoValidateMode,
 
      ElevatedButton(
        style: ElevatedButton.styleFrom(
-         backgroundColor:state.isEmailTyping? AppColors.blue:AppColors.lightGrey,
+         backgroundColor:state.isEmailTyping? AppColors.blue:AppColors.black[30],
          fixedSize: Size(MediaQuery.of(context).size.width, 50),
        ),
        onPressed: state.isEmailTyping==true?() {
@@ -82,7 +82,11 @@ autovalidateMode: state.autoValidateMode,
   if(state.forgetPasswordRequest.isSuccess){
     ScaffoldMessenger.of(context).showSnackBar(
     SnackBar(content: Text(AppLocalizations.of(context)!.emailSentSuccessfully)));
- Navigator.of(context).pushNamed(AppRoutes.verifyPassword);
+ Navigator.of(context).pushNamed(
+     AppRoutes.verifyPassword,
+ //    arguments: context.read<ForgetPasswordCubit>
+   //().emailController
+ );
   }
   if(state.forgetPasswordRequest.isFailure){
     ScaffoldMessenger.of(context).showSnackBar(

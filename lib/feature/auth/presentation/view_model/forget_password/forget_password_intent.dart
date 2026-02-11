@@ -21,3 +21,11 @@ final class VerifyCodeIntent
     extends ForgetPasswordIntent {
   const VerifyCodeIntent();
 }
+final class ResetPasswordInitializationIntent
+    extends ForgetPasswordIntent {
+  const ResetPasswordInitializationIntent();
+}
+final class ResetPasswordFormIntent
+    extends ForgetPasswordIntent {
+  const ResetPasswordFormIntent();
+}

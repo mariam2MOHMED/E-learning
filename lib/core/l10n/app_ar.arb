@@ -34,6 +34,7 @@
 
   "phoneNumber": "رقم الهاتف",
   "enterPhoneNumber": "أدخل رقم الهاتف",
+  "registerSuccess": "تم إنشاء الحساب بنجاح",
 
   "signupButton": "إنشاء حساب",
   "alreadyHaveAccount": "لديك حساب بالفعل؟",
@@ -47,5 +48,11 @@
   "enterVerificationCode": "من فضلك أدخل رمز التحقق الذي تم إرساله إلى بريدك الإلكتروني",
   "invalidCode": "رمز غير صحيح",
   "didNotReceiveCode": "لم يصلك الرمز؟",
-  "resend": "إعادة الإرسال"
+  "resend": "إعادة الإرسال",
+  "codeSentSuccessfully": "تم إرسال الكود بنجاح",
+  "passwordValidation": "يجب ألا تكون كلمة المرور فارغة، ويجب أن تحتوي على 6 أحرف على الأقل، من بينها حرف كبير ورقم واحد",
+  "resetPassword": "إعادة تعيين كلمة المرور",
+  "newPassword": "كلمة مرور جديدة",
+  "passwordResetSuccessfully": "تم إعادة تعيين كلمة المرور بنجاح"
+
 }

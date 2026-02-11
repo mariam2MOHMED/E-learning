@@ -34,6 +34,7 @@
 
   "phoneNumber": "Phone number",
   "enterPhoneNumber": "Enter phone number",
+  "registerSuccess": "Registration completed successfully",
 
   "signupButton": "Signup",
   "alreadyHaveAccount": "Already have an account?",
@@ -46,5 +47,13 @@
   "enterVerificationCode": "Please enter your code that was sent to your\n email address",
   "invalidCode": "Invalid code",
   "didNotReceiveCode": "Didn't receive code?",
-  "resend": "Resend"
+  "resend": "Resend",
+  "codeSentSuccessfully": "Code sent successfully",
+  "passwordValidation": "Password must not be empty and must contain\n at least 6 characters, including one\n uppercase letter and one number",
+  "resetPassword": "Reset Password",
+  "newPassword": "New Password",
+  "passwordResetSuccessfully": "Password reset successfully"
+
+
+
 }

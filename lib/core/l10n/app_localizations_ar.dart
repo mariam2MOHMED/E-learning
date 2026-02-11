@@ -85,6 +85,9 @@ class AppLocalizationsAr extends AppLocalizations {
   String get enterPhoneNumber => 'أدخل رقم الهاتف';
 
   @override
+  String get registerSuccess => 'تم إنشاء الحساب بنجاح';
+
+  @override
   String get signupButton => 'إنشاء حساب';
 
   @override
@@ -122,4 +125,20 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get resend => 'إعادة الإرسال';
+
+  @override
+  String get codeSentSuccessfully => 'تم إرسال الكود بنجاح';
+
+  @override
+  String get passwordValidation =>
+      'يجب ألا تكون كلمة المرور فارغة، ويجب أن تحتوي على 6 أحرف على الأقل، من بينها حرف كبير ورقم واحد';
+
+  @override
+  String get resetPassword => 'إعادة تعيين كلمة المرور';
+
+  @override
+  String get newPassword => 'كلمة مرور جديدة';
+
+  @override
+  String get passwordResetSuccessfully => 'تم إعادة تعيين كلمة المرور بنجاح';
 }

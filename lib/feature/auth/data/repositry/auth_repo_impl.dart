@@ -3,6 +3,8 @@ import 'package:elearning/feature/auth/api/models/forget_password/forget_passwor
 import 'package:elearning/feature/auth/api/models/forget_password/forget_password_response.dart';
 import 'package:elearning/feature/auth/api/models/forget_password/reset_code_request.dart';
 import 'package:elearning/feature/auth/api/models/forget_password/reset_code_response.dart';
+import 'package:elearning/feature/auth/api/models/forget_password/reset_password_request.dart';
+import 'package:elearning/feature/auth/api/models/forget_password/reset_password_response.dart';
 import 'package:elearning/feature/auth/api/models/register/register_request.dart';
 import 'package:elearning/feature/auth/data/data_source/auth_data_source.dart';
 import 'package:elearning/feature/auth/domain/entity/user_entity.dart';
@@ -27,6 +29,12 @@ return await _authDataSource.forgetPassword(request);
   Future<Result<ResetCodeResponse>> verifyCode(ResetCodeRequest
   request)async {
    return await _authDataSource.verifyCode(request);
+  }
+
+  @override
+  Future<Result<ResetPasswordResponse>> resetPassword(ResetPasswordRequest request) async{
+    return await _authDataSource.resetPassword(request);
+
   }
 
 }
