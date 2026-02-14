@@ -19,7 +19,8 @@
 
   "firstName": "الاسم الأول",
   "enterFirstName": "أدخل الاسم الأول",
-
+  "remeberMe": "ذكرنى",
+  "dontHaveAccount": "ليس لديك حساب؟  ",
   "lastName": "اسم العائلة",
   "enterLastName": "أدخل اسم العائلة",
 

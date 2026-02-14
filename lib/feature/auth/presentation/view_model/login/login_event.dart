@@ -11,3 +11,6 @@ final class LoginFormIntent extends LoginIntent {
 final class IsTypingIntent extends LoginIntent {
   const IsTypingIntent();
 }
+final class IsRememberIntent extends LoginIntent {
+  const IsRememberIntent();
+}

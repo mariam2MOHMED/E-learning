@@ -1,4 +1,6 @@
 import 'package:elearning/core/di/di.dart';
+import 'package:elearning/core/route/app_routes.dart';
+import 'package:elearning/feature/auth/presentation/view/widget/remember_me_section.dart';
 import 'package:elearning/feature/auth/presentation/view_model/login/login_cubit.dart';
 import 'package:elearning/feature/auth/presentation/view_model/login/login_event.dart';
 import 'package:elearning/feature/auth/presentation/view_model/login/login_state.dart';
@@ -8,6 +10,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../../core/l10n/app_localizations.dart';
 import '../../../../../core/theme/app_colors.dart';
 import '../../../../../core/validators/validator.dart';
+import '../widget/have_account_section.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -70,6 +73,11 @@ onChanged: (_){
             labelText: AppLocalizations.of(context)!.password,
           ),
         ),
+        const SizedBox(height: 16.0,),
+        RememberMeSection(value: state.isRemember,
+          onChanged: (value){
+          cubit.doIntent(intent: const IsRememberIntent());
+          },),
         const SizedBox(height: 32.0,),
         ElevatedButton(
             style:ElevatedButton.styleFrom(
@@ -80,7 +88,14 @@ onChanged: (_){
             onPressed:state.isTyping? (){
               cubit.doIntent(intent: const LoginFormIntent());
             }:null,
-            child: Text( AppLocalizations.of(context)!.login))
+            child: Text( AppLocalizations.of(context)!.login)),
+        const SizedBox(height: 21.0),
+        HaveAccountSection(
+            onEnter: (){
+              Navigator.of(context).pushNamed(AppRoutes.register);
+            },
+            title: AppLocalizations.of(context)!
+            .dontHaveAccount, subTitle: AppLocalizations.of(context)!.signUp)
       ],
     ),
   );

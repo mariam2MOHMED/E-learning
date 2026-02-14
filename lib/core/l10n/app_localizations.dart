@@ -200,6 +200,12 @@ abstract class AppLocalizations {
   /// **'Enter last name'**
   String get enterLastName;
 
+  /// No description provided for @remeberMe.
+  ///
+  /// In en, this message translates to:
+  /// **'Remember me'**
+  String get remeberMe;
+
   /// No description provided for @email.
   ///
   /// In en, this message translates to:
@@ -236,6 +242,12 @@ abstract class AppLocalizations {
   /// **'Confirm password'**
   String get enterConfirmPassword;
 
+  /// No description provided for @dontHaveAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'Don\'t have an account?'**
+  String get dontHaveAccount;
+
   /// No description provided for @phoneNumber.
   ///
   /// In en, this message translates to:
@@ -269,7 +281,7 @@ abstract class AppLocalizations {
   /// No description provided for @alreadyHaveAccount.
   ///
   /// In en, this message translates to:
-  /// **'Already have an account?'**
+  /// **'Already have an account?  '**
   String get alreadyHaveAccount;
 
   /// No description provided for @forgotPassword.

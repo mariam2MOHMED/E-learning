@@ -34,6 +34,9 @@ import '../../feature/auth/presentation/view_model/login/login_cubit.dart'
 import '../../feature/auth/presentation/view_model/register/register_cubit.dart'
     as _i987;
 import '../app_language/app_language.dart' as _i5;
+import '../cache/cache_helper.dart' as _i144;
+import '../cache/secure_storage_helper.dart' as _i342;
+import '../interceptor/token_interceptor.dart' as _i827;
 import 'modules/dio_module.dart' as _i983;
 import 'modules/shared_preference.dart' as _i938;
 
@@ -50,10 +53,17 @@ extension GetItInjectableX on _i174.GetIt {
       () => sharedPreferenceModule.provideSharedPreferenceMoudle(),
       preResolve: true,
     );
+    gh.singleton<_i144.SharedPreferencesHelper>(
+      () => _i144.SharedPreferencesHelper(),
+    );
+    gh.singleton<_i342.SecureStorage>(() => _i342.SecureStorage());
     gh.lazySingleton<_i528.PrettyDioLogger>(() => dioModule.prettyDioLogger);
     gh.lazySingleton<_i361.Dio>(() => dioModule.provideDio());
     gh.factory<_i199.AuthApiServices>(
       () => _i199.AuthApiServices(gh<_i361.Dio>()),
+    );
+    gh.lazySingleton<_i827.TokenInterceptor>(
+      () => _i827.TokenInterceptor(gh<_i342.SecureStorage>()),
     );
     gh.singleton<_i5.AppLanguage>(
       () => _i5.AppLanguage(sharedPreferences: gh<_i460.SharedPreferences>()),
@@ -90,7 +100,11 @@ extension GetItInjectableX on _i174.GetIt {
       ),
     );
     gh.factory<_i21.LoginCubit>(
-      () => _i21.LoginCubit(gh<_i433.LoginUseCase>()),
+      () => _i21.LoginCubit(
+        gh<_i433.LoginUseCase>(),
+        gh<_i342.SecureStorage>(),
+        gh<_i144.SharedPreferencesHelper>(),
+      ),
     );
     return this;
   }

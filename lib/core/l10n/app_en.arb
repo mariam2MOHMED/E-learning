@@ -22,7 +22,7 @@
 
   "lastName": "Last name",
   "enterLastName": "Enter last name",
-
+"remeberMe": "Remember me",
   "email": "Email",
   "enterEmail": "Enter your email",
 
@@ -31,14 +31,14 @@
 
   "confirmPassword": "Confirm password",
   "enterConfirmPassword": "Confirm password",
-
+  "dontHaveAccount": "Don't have an account?",
   "phoneNumber": "Phone number",
   "enterPhoneNumber": "Enter phone number",
   "registerSuccess": "Registration completed successfully",
   "loginSuccess": "Login completed successfully",
 
   "signupButton": "Signup",
-  "alreadyHaveAccount": "Already have an account?",
+  "alreadyHaveAccount": "Already have an account?  ",
   "forgotPassword": "Forgot Password",
   "forgotPasswordDesc": "Please enter the email associated with your account",
   "continueWord": "Continue",

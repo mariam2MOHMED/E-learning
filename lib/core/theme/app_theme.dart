@@ -29,9 +29,19 @@ abstract class AppTheme {
           color: AppColors.black,
         ),
         headlineMedium: TextStyle(
-          fontSize: FontSize.s18,
+          fontSize: FontSize.s16,
           fontWeight: FontWeightManager.medium,
-          color: AppColors.white
+          color: AppColors.black
+        ),
+        displayMedium: TextStyle(
+            fontSize: FontSize.s18,
+            fontWeight: FontWeightManager.bold,
+            color: AppColors.black
+        ),
+        headlineSmall: TextStyle(
+            fontSize: FontSize.s13,
+            fontWeight: FontWeightManager.medium,
+            color: AppColors.black
         ),
         bodyMedium: TextStyle(
           fontSize: FontSize.s14,

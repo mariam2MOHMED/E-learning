@@ -61,6 +61,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get enterLastName => 'Enter last name';
 
   @override
+  String get remeberMe => 'Remember me';
+
+  @override
   String get email => 'Email';
 
   @override
@@ -79,6 +82,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get enterConfirmPassword => 'Confirm password';
 
   @override
+  String get dontHaveAccount => 'Don\'t have an account?';
+
+  @override
   String get phoneNumber => 'Phone number';
 
   @override
@@ -94,7 +100,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get signupButton => 'Signup';
 
   @override
-  String get alreadyHaveAccount => 'Already have an account?';
+  String get alreadyHaveAccount => 'Already have an account?  ';
 
   @override
   String get forgotPassword => 'Forgot Password';

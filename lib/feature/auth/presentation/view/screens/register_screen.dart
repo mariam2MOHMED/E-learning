@@ -1,9 +1,11 @@
 import 'package:elearning/core/di/di.dart';
 import 'package:elearning/core/l10n/app_localizations.dart';
+import 'package:elearning/feature/auth/presentation/view/widget/have_account_section.dart';
 import 'package:elearning/feature/auth/presentation/view_model/register/register_cubit.dart';
 import 'package:elearning/feature/auth/presentation/view_model/register/register_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import '../../../../../core/route/app_routes.dart';
 import '../../../../../core/theme/app_colors.dart';
 import '../../view_model/register/register_intent.dart';
 import '../widget/user_info_wid.dart';
@@ -94,6 +96,13 @@ class RegisterScreen extends StatelessWidget {
                    }:null,
                    child: Text(AppLocalizations.of(context)!.signUp),
                  ),
+                 const SizedBox(height: 21.0),
+                 HaveAccountSection(
+                     onEnter: (){
+                       Navigator.of(context).pushNamed(AppRoutes.login);
+                     },
+                     title: AppLocalizations.of(context)!
+                     .alreadyHaveAccount, subTitle: AppLocalizations.of(context)!.login)
                ],
              ),
            );

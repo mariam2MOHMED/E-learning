@@ -7,25 +7,29 @@ class LoginState extends Equatable{
 final StateStatus<AuthEntity> loginRequest;
 final AutovalidateMode autovalidateMode;
 final bool isTyping;
+final bool isRemember;
 const LoginState({
   this.loginRequest=const StateStatus.initial(),
   this.autovalidateMode = AutovalidateMode.disabled,
-  this.isTyping=false
+  this.isTyping=false,
+  this.isRemember=false
 });
 LoginState copyWith({
   StateStatus<AuthEntity>? loginRequest,
    AutovalidateMode? autovalidateMode,
-   bool? isTyping
+   bool? isTyping,
+  bool? isRemember
 }){
   return LoginState(
     loginRequest: loginRequest??this.loginRequest,
     isTyping: isTyping??this.isTyping,
-    autovalidateMode:autovalidateMode??this.autovalidateMode
+    autovalidateMode:autovalidateMode??this.autovalidateMode,
+    isRemember: isRemember??this.isRemember
   );
 }
   @override
   List<Object?> get props => [
-    loginRequest,autovalidateMode,isTyping
+    loginRequest,autovalidateMode,isTyping,isRemember
   ];
 
 }

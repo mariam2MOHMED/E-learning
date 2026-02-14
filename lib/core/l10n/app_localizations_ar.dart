@@ -61,6 +61,9 @@ class AppLocalizationsAr extends AppLocalizations {
   String get enterLastName => 'أدخل اسم العائلة';
 
   @override
+  String get remeberMe => 'ذكرنى';
+
+  @override
   String get email => 'البريد الإلكتروني';
 
   @override
@@ -77,6 +80,9 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get enterConfirmPassword => 'أدخل تأكيد كلمة المرور';
+
+  @override
+  String get dontHaveAccount => 'ليس لديك حساب؟  ';
 
   @override
   String get phoneNumber => 'رقم الهاتف';
