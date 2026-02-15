@@ -97,6 +97,12 @@ class AppLocalizationsEn extends AppLocalizations {
   String get loginSuccess => 'Login completed successfully';
 
   @override
+  String get change => 'Change';
+
+  @override
+  String get update => 'Update';
+
+  @override
   String get signupButton => 'Signup';
 
   @override
@@ -150,4 +156,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get passwordResetSuccessfully => 'Password reset successfully';
+
+  @override
+  String get editProfile => 'Edit Profile';
 }

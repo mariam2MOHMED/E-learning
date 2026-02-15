@@ -272,6 +272,18 @@ abstract class AppLocalizations {
   /// **'Login completed successfully'**
   String get loginSuccess;
 
+  /// No description provided for @change.
+  ///
+  /// In en, this message translates to:
+  /// **'Change'**
+  String get change;
+
+  /// No description provided for @update.
+  ///
+  /// In en, this message translates to:
+  /// **'Update'**
+  String get update;
+
   /// No description provided for @signupButton.
   ///
   /// In en, this message translates to:
@@ -373,6 +385,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Password reset successfully'**
   String get passwordResetSuccessfully;
+
+  /// No description provided for @editProfile.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit Profile'**
+  String get editProfile;
 }
 
 class _AppLocalizationsDelegate

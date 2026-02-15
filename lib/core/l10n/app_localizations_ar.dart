@@ -97,6 +97,12 @@ class AppLocalizationsAr extends AppLocalizations {
   String get loginSuccess => 'تم تسجيل الدخول بنجاح';
 
   @override
+  String get change => 'تغير';
+
+  @override
+  String get update => 'تحديث';
+
+  @override
   String get signupButton => 'إنشاء حساب';
 
   @override
@@ -150,4 +156,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get passwordResetSuccessfully => 'تم إعادة تعيين كلمة المرور بنجاح';
+
+  @override
+  String get editProfile => 'تعديل الملف الشخصي';
 }

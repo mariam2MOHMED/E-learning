@@ -32,6 +32,8 @@
 
   "confirmPassword": "تأكيد كلمة المرور",
   "enterConfirmPassword": "أدخل تأكيد كلمة المرور",
+  "change": "تغير",
+  "update": "تحديث",
 
   "phoneNumber": "رقم الهاتف",
   "enterPhoneNumber": "أدخل رقم الهاتف",
@@ -55,6 +57,7 @@
   "passwordValidation": "يجب ألا تكون كلمة المرور فارغة، ويجب أن تحتوي على 6 أحرف على الأقل، من بينها حرف كبير ورقم واحد",
   "resetPassword": "إعادة تعيين كلمة المرور",
   "newPassword": "كلمة مرور جديدة",
-  "passwordResetSuccessfully": "تم إعادة تعيين كلمة المرور بنجاح"
+  "passwordResetSuccessfully": "تم إعادة تعيين كلمة المرور بنجاح",
+  "editProfile": "تعديل الملف الشخصي"
 
 }

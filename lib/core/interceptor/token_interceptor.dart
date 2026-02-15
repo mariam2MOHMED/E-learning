@@ -11,9 +11,16 @@ class TokenInterceptor extends Interceptor {
   TokenInterceptor(this._secure);
 
   @override
-  void onRequest(RequestOptions options, RequestInterceptorHandler handler) {
-    final token = _secure.getData(key: Constants.token);
-    options.headers["token"] = token;
-    super.onRequest(options, handler);
+  void onRequest(RequestOptions options, RequestInterceptorHandler handler) async {
+    final token = await _secure.getData(key: Constants.token);
+
+    print("TOKEN = $token");
+
+    if (token != null && token.isNotEmpty) {
+      options.headers["token"] = token;
+    }
+
+    handler.next(options);
   }
+
 }

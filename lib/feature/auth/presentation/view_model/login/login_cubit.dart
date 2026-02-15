@@ -70,7 +70,7 @@ class LoginCubit extends Cubit<LoginState> {
 if(state.isRemember){
   _getRememberValue();
 }
-_secureStorage.saveUserToken(token: Constants.token);
+_secureStorage.saveUserToken(token: token);
         emit(
           state.copyWith(
             loginRequest: StateStatus.success(result.successResult),
