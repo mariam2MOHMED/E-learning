@@ -164,6 +164,12 @@ abstract class AppLocalizations {
   /// **'Login'**
   String get login;
 
+  /// No description provided for @currentPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Current password'**
+  String get currentPassword;
+
   /// No description provided for @username.
   ///
   /// In en, this message translates to:
@@ -175,6 +181,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Enter your username'**
   String get enterUsername;
+
+  /// No description provided for @updatePasswordSuccess.
+  ///
+  /// In en, this message translates to:
+  /// **'Password updated successfully'**
+  String get updatePasswordSuccess;
 
   /// No description provided for @firstName.
   ///
@@ -217,6 +229,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Enter your email'**
   String get enterEmail;
+
+  /// No description provided for @updateProfile.
+  ///
+  /// In en, this message translates to:
+  /// **'Update Profile Success'**
+  String get updateProfile;
 
   /// No description provided for @password.
   ///

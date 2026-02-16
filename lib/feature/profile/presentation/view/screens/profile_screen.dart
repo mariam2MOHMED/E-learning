@@ -16,12 +16,10 @@ class ProfileScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-          onPressed: () {
-          },
+          onPressed: () {},
           icon: const Icon(
             Icons.arrow_back_ios_rounded,
             color: AppColors.gray,
@@ -30,69 +28,83 @@ class ProfileScreen extends StatelessWidget {
         ),
         title: Text(
           AppLocalizations.of(context)!.editProfile,
-          style: Theme.of(context).textTheme.titleMedium,
+          style: Theme
+              .of(context)
+              .textTheme
+              .titleMedium,
         ),
       ),
       body: Padding(padding: const EdgeInsetsDirectional.symmetric(
         horizontal: 16.0,
         vertical: 32.0,
-      ),child:
-   BlocProvider(create: (_)=>getIt<ProfileCubit>()..
-   doIntent(intent: const GetLoggedUserInfoEvent()),
-   child:
-BlocConsumer<ProfileCubit,ProfileStates>(builder: (context,state){
-  if(state.profileStatus.isLoading){
-    return    const Center(
-      child: CircularProgressIndicator(),
-    );
-  }
-  if(state.profileStatus.isSuccess){
-    return    Column(
-      children: [
-        const UserProfileWidget(),
-        const SizedBox(height: 16.0,),
-        UserInfoWidget(
+      ), child:
+      BlocProvider(create: (_) =>
+      getIt<ProfileCubit>()
+        ..
+        doIntent(intent: const GetLoggedUserInfoEvent()),
+          child:
+          BlocConsumer<ProfileCubit, ProfileStates>(builder: (context, state) {
+            final cubit = context.read<ProfileCubit>();
+            if (state.profileStatus.isLoading) {
+              return const Center(child: CircularProgressIndicator(),);
+            } else if (state.profileStatus.isSuccess) {
+              return
+             Form(
+               key: cubit.editFormKey,
+                 autovalidateMode: state.editAutouvalidateMode,
+                 child:    Column(
+               children: [
+                 const UserProfileWidget(),
+                 const SizedBox(height: 16.0,),
+                 UserInfoWidget(
 
-            userName:  TextEditingController(
-                text: state.profileStatus.data!.username
-            ),
-            firstName:  TextEditingController(
-              text: state.profileStatus.data!.firstName,
+                     userName:  cubit.userNameController,
 
-            ),
-            lastName:  TextEditingController(
-                text: state.profileStatus.data!.lastName
-            )),
-        UserProfileInfo(emailController: TextEditingController(
-            text: state.profileStatus.data!.email
-        ),
-            phoneController: TextEditingController(
-            text: state.profileStatus.data!.phone
-  ),),
-        const SizedBox(height: 32.0,),
-        ElevatedButton(
-            style: ElevatedButton.styleFrom(
-              backgroundColor: AppColors.primaryBlue,
-              fixedSize: Size(MediaQuery.of(context).size.width, 50)
-            ),
-            onPressed: (){},
-            child: Text(AppLocalizations.of(context)!.update))
+                     firstName:cubit.firstNameController,
 
-      ],
-    );
-  }
- return const Center();
 
-}, listener:  (context,state){
-  if(state.editProfileStatus.isFailure){
-    print("the error =====>${state.profileStatus.error}");
-  }
-  if(state.editProfileStatus.isSuccess){
-    print("the success =====>${state.profileStatus.error}");
-  }
-})
-   )
-      ) ,
+                     lastName:  cubit.lastNameController
+
+                 ),
+                 UserProfileInfo(
+
+                   emailController:  cubit.emailController,
+
+                   phoneController: cubit.phoneNumberController
+
+                 ),
+                 const SizedBox(height: 32.0,),
+                 ElevatedButton(
+                     style: ElevatedButton.styleFrom(
+                         backgroundColor: AppColors.primaryBlue,
+                         fixedSize: Size(MediaQuery
+                             .of(context)
+                             .size
+                             .width, 50)
+                     ),
+                     onPressed: () {
+                       context.read<ProfileCubit>().doIntent(
+                           intent: const EditProfileFormEvent());
+                     },
+                     child: Text(AppLocalizations.of(context)!.update))
+
+               ],
+             ));
+            }
+            return const Center();
+          }, listener: (context, state) {
+            if (state.editProfileStatus.isFailure) {
+              ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(content: Text(state.editProfileStatus.error!.message)));            }
+            if (state.editProfileStatus.isSuccess) {
+           ScaffoldMessenger.of(context).showSnackBar(
+               SnackBar(content: Text(AppLocalizations.of(context)!.updateProfile)));
+            }
+          })
+      )
+      ),
     );
   }
 }
+
+

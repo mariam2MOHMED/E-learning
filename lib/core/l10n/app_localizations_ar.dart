@@ -43,10 +43,16 @@ class AppLocalizationsAr extends AppLocalizations {
   String get login => 'تسجيل الدخول';
 
   @override
+  String get currentPassword => 'كلمة المرور الحالية';
+
+  @override
   String get username => 'اسم المستخدم';
 
   @override
   String get enterUsername => 'أدخل اسم المستخدم';
+
+  @override
+  String get updatePasswordSuccess => 'تم تحديث كلمة المرور بنجاح';
 
   @override
   String get firstName => 'الاسم الأول';
@@ -68,6 +74,9 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get enterEmail => 'أدخل بريدك الإلكتروني';
+
+  @override
+  String get updateProfile => 'تم تحديث ملفك الشخصى بنجاح';
 
   @override
   String get password => 'كلمة المرور';

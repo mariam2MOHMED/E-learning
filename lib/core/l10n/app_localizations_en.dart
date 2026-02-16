@@ -43,10 +43,16 @@ class AppLocalizationsEn extends AppLocalizations {
   String get login => 'Login';
 
   @override
+  String get currentPassword => 'Current password';
+
+  @override
   String get username => 'Username';
 
   @override
   String get enterUsername => 'Enter your username';
+
+  @override
+  String get updatePasswordSuccess => 'Password updated successfully';
 
   @override
   String get firstName => 'First name';
@@ -68,6 +74,9 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get enterEmail => 'Enter your email';
+
+  @override
+  String get updateProfile => 'Update Profile Success';
 
   @override
   String get password => 'Password';

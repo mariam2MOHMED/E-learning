@@ -4,6 +4,7 @@ import 'package:elearning/feature/auth/presentation/view/screens/forget_password
 import 'package:elearning/feature/auth/presentation/view/screens/login_screen.dart';
 import 'package:elearning/feature/auth/presentation/view/screens/register_screen.dart';
 import 'package:elearning/feature/auth/presentation/view/screens/reset_password_screen.dart';
+import 'package:elearning/feature/profile/presentation/view/screens/change_password.dart';
 import 'package:flutter/material.dart';
 import '../../feature/auth/presentation/view/screens/verfiy_code_screen.dart';
 import '../../feature/profile/presentation/view/screens/profile_screen.dart';
@@ -30,6 +31,12 @@ abstract class Routes{
 
         return MaterialPageRoute(
           builder: (_) => const ProfileScreen(),
+
+        );
+      case AppRoutes.changePassword:
+
+        return MaterialPageRoute(
+          builder: (_) => const ChangePasswordScreen(),
 
         );
       case AppRoutes.forgetPassword:

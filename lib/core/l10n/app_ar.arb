@@ -13,9 +13,10 @@
 
   "signUp": "إنشاء حساب",
   "login": "تسجيل الدخول",
-
+  "currentPassword": "كلمة المرور الحالية",
   "username": "اسم المستخدم",
   "enterUsername": "أدخل اسم المستخدم",
+  "updatePasswordSuccess": "تم تحديث كلمة المرور بنجاح",
 
   "firstName": "الاسم الأول",
   "enterFirstName": "أدخل الاسم الأول",
@@ -23,6 +24,7 @@
   "dontHaveAccount": "ليس لديك حساب؟  ",
   "lastName": "اسم العائلة",
   "enterLastName": "أدخل اسم العائلة",
+  "updateProfile": "تم تحديث ملفك الشخصى بنجاح",
 
   "email": "البريد الإلكتروني",
   "enterEmail": "أدخل بريدك الإلكتروني",

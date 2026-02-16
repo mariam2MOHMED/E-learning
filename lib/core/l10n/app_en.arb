@@ -13,9 +13,10 @@
   "phoneLength": "Phone number must be 11 digits",
   "signUp": "Sign up",
   "login": "Login",
-
+  "currentPassword": "Current password",
   "username": "Username",
   "enterUsername": "Enter your username",
+  "updatePasswordSuccess": "Password updated successfully",
 
   "firstName": "First name",
   "enterFirstName": "Enter first name",
@@ -25,7 +26,7 @@
 "remeberMe": "Remember me",
   "email": "Email",
   "enterEmail": "Enter your email",
-
+"updateProfile": "Update Profile Success",
   "password": "Password",
   "enterPassword": "Enter password",
 

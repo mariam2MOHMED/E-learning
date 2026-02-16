@@ -1,4 +1,5 @@
 import 'package:elearning/core/l10n/app_localizations.dart';
+import 'package:elearning/core/route/app_routes.dart';
 import 'package:elearning/core/theme/app_colors.dart';
 import 'package:elearning/core/theme/fonts_manager.dart';
 import 'package:elearning/core/validators/validator.dart';
@@ -31,15 +32,17 @@ class UserProfileInfo extends StatelessWidget {
         TextFormField(
           obscureText: true,
           obscuringCharacter: "⭐",
-          controller: TextEditingController(text: "mariamj"),
-          validator: Validator.validatePassword,
+          controller: TextEditingController(text: "maria"),
+
           decoration: InputDecoration(
             hintText: AppLocalizations.of(context)!.enterPassword,
             labelText: AppLocalizations.of(context)!.password,
             suffixIcon: GestureDetector(
-              onTap: () {},
+              onTap: () {
+                Navigator.of(context).pushNamed(AppRoutes.changePassword);
+              },
               child: Padding(
-                  padding: const EdgeInsetsGeometry.symmetric(horizontal: 10),
+                  padding: const EdgeInsetsGeometry.symmetric(horizontal: 10,vertical: 16.0),
                   child: Text(
                     AppLocalizations.of(context)!.change,
                     style: const TextStyle(

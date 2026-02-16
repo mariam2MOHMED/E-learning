@@ -44,6 +44,8 @@ import '../../feature/profile/domain/use_case/edit_profile_use_case.dart'
     as _i36;
 import '../../feature/profile/domain/use_case/get_logged_user_profile_use_case.dart'
     as _i527;
+import '../../feature/profile/presentation/view_model/change_password/change_password_cubit.dart'
+    as _i371;
 import '../../feature/profile/presentation/view_model/profile/profile_cubit.dart'
     as _i317;
 import '../app_language/app_language.dart' as _i5;
@@ -110,6 +112,9 @@ extension GetItInjectableX on _i174.GetIt {
         gh<_i527.GetLoggedUserProfileUseCase>(),
         gh<_i36.EditProfileUseCase>(),
       ),
+    );
+    gh.factory<_i371.ChangePasswordCubit>(
+      () => _i371.ChangePasswordCubit(gh<_i1053.ChangePasswordUseCase>()),
     );
     gh.factory<_i748.ForgetPasswordUseCase>(
       () => _i748.ForgetPasswordUseCase(gh<_i569.AuthRepo>()),
