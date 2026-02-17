@@ -33,6 +33,17 @@ import '../../feature/auth/presentation/view_model/login/login_cubit.dart'
     as _i21;
 import '../../feature/auth/presentation/view_model/register/register_cubit.dart'
     as _i987;
+import '../../feature/explore/api/client/explore_services.dart' as _i84;
+import '../../feature/explore/api/data_source/explore_data_source_impl.dart'
+    as _i1071;
+import '../../feature/explore/data/data_source/explore_data_source.dart'
+    as _i184;
+import '../../feature/explore/data/repo/explore_repo_impl.dart' as _i495;
+import '../../feature/explore/domain/repo/explore_repo.dart' as _i183;
+import '../../feature/explore/domain/use_case/get_all_subjects_use_case.dart'
+    as _i212;
+import '../../feature/explore/presentation/view_model/explore_cubit/explore_cubit.dart'
+    as _i1059;
 import '../../feature/profile/api/client/profile_client.dart' as _i324;
 import '../../feature/profile/api/data/profile_data_source_impl.dart' as _i1047;
 import '../../feature/profile/data/data/profile_data_source.dart' as _i679;
@@ -77,6 +88,9 @@ extension GetItInjectableX on _i174.GetIt {
     gh.factory<_i199.AuthApiServices>(
       () => _i199.AuthApiServices(gh<_i361.Dio>()),
     );
+    gh.factory<_i84.ExploreServices>(
+      () => _i84.ExploreServices(gh<_i361.Dio>()),
+    );
     gh.factory<_i324.ProfileApiServices>(
       () => _i324.ProfileApiServices(gh<_i361.Dio>()),
     );
@@ -85,6 +99,9 @@ extension GetItInjectableX on _i174.GetIt {
     );
     gh.singleton<_i5.AppLanguage>(
       () => _i5.AppLanguage(sharedPreferences: gh<_i460.SharedPreferences>()),
+    );
+    gh.factory<_i184.ExploreDataSource>(
+      () => _i1071.ExploreDataSourceImpl(gh<_i84.ExploreServices>()),
     );
     gh.factory<_i868.AuthDataSource>(
       () => _i596.AuthDataSourceImpl(gh<_i199.AuthApiServices>()),
@@ -95,6 +112,9 @@ extension GetItInjectableX on _i174.GetIt {
     gh.factory<_i53.ProfileRepo>(
       () => _i341.ProfileRepoImpl(gh<_i679.ProfileDataSource>()),
     );
+    gh.factory<_i183.ExploreRepo>(
+      () => _i495.ExploreRepoImpl(gh<_i184.ExploreDataSource>()),
+    );
     gh.factory<_i1053.ChangePasswordUseCase>(
       () => _i1053.ChangePasswordUseCase(gh<_i53.ProfileRepo>()),
     );
@@ -103,6 +123,12 @@ extension GetItInjectableX on _i174.GetIt {
     );
     gh.factory<_i527.GetLoggedUserProfileUseCase>(
       () => _i527.GetLoggedUserProfileUseCase(gh<_i53.ProfileRepo>()),
+    );
+    gh.factory<_i212.GetAllSubjectsUseCase>(
+      () => _i212.GetAllSubjectsUseCase(gh<_i183.ExploreRepo>()),
+    );
+    gh.factory<_i1059.ExploreCubit>(
+      () => _i1059.ExploreCubit(gh<_i212.GetAllSubjectsUseCase>()),
     );
     gh.factory<_i569.AuthRepo>(
       () => _i1069.AuthRepoImpl(gh<_i868.AuthDataSource>()),
