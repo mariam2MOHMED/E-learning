@@ -23,6 +23,11 @@ abstract class AppTheme {
           fontWeight: FontWeightManager.medium,
           color: AppColors.black,
         ),
+        titleSmall: TextStyle(
+          fontSize: FontSize.s14,
+          fontWeight: FontWeightManager.bold,
+          color: AppColors.blue,
+        ),
         bodyLarge: TextStyle(
           fontSize: FontSize.s18,
           fontWeight: FontWeightManager.medium,

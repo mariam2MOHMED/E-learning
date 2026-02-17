@@ -37,8 +37,8 @@ class OnlineExamApp extends StatelessWidget {
       theme: AppTheme.lightTheme,
       debugShowCheckedModeBanner: false,
       initialRoute:
-  initialRoute != null ? AppRoutes.editProfile :
-      AppRoutes.login,
+  //initialRoute != null ? AppRoutes.editProfile :
+      AppRoutes.home,
 
       locale: Locale(appLanguage.selectedLocal),
       onGenerateRoute: Routes.generateRoute,

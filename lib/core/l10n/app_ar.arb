@@ -17,7 +17,12 @@
   "username": "اسم المستخدم",
   "enterUsername": "أدخل اسم المستخدم",
   "updatePasswordSuccess": "تم تحديث كلمة المرور بنجاح",
-
+  "result": "النتيجة",
+  "profile": "الملف الشخصي",
+  "explore": "استكشاف",
+  "search": "بحث",
+  "survey": "استبيان",
+  "browse_by_subject": "تصفح حسب المادة",
   "firstName": "الاسم الأول",
   "enterFirstName": "أدخل الاسم الأول",
   "remeberMe": "ذكرنى",

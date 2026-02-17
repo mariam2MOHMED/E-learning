@@ -1,4 +1,5 @@
 import 'package:elearning/core/l10n/app_localizations.dart';
+import 'package:elearning/core/validators/validator.dart';
 import 'package:flutter/material.dart';
 
 class ChangePasswordForm extends StatelessWidget {
@@ -22,6 +23,7 @@ class ChangePasswordForm extends StatelessWidget {
           TextFormField(
             controller: oldPassword,
             onChanged:onChanged ,
+            validator: Validator.validatePassword,
             decoration: InputDecoration(
               labelText: AppLocalizations.of(context)!.currentPassword,
               hintText: AppLocalizations.of(context)!.currentPassword,
@@ -32,6 +34,8 @@ class ChangePasswordForm extends StatelessWidget {
           TextFormField(
             controller: newPassword,
             onChanged:onChanged,
+
+            validator: Validator.validatePassword,
             decoration: InputDecoration(
               labelText: AppLocalizations.of(context)!.newPassword,
               hintText: AppLocalizations.of(context)!.newPassword,
@@ -42,6 +46,8 @@ class ChangePasswordForm extends StatelessWidget {
           TextFormField(
             controller: confrimNewPassword,
             onChanged:onChanged ,
+            validator: (_)=>Validator.validateConfirmPassword(confrimNewPassword.text,
+                newPassword.text),
             decoration: InputDecoration(
               labelText: AppLocalizations.of(context)!.confirmPassword,
               hintText: AppLocalizations.of(context)!.confirmPassword,

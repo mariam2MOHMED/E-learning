@@ -55,10 +55,28 @@ class AppLocalizationsAr extends AppLocalizations {
   String get updatePasswordSuccess => 'تم تحديث كلمة المرور بنجاح';
 
   @override
+  String get explore => 'استكشاف';
+
+  @override
+  String get search => 'بحث';
+
+  @override
+  String get survey => 'استبيان';
+
+  @override
+  String get browse_by_subject => 'تصفح حسب المادة';
+
+  @override
   String get firstName => 'الاسم الأول';
 
   @override
   String get enterFirstName => 'أدخل الاسم الأول';
+
+  @override
+  String get result => 'النتيجة';
+
+  @override
+  String get profile => 'الملف الشخصي';
 
   @override
   String get lastName => 'اسم العائلة';

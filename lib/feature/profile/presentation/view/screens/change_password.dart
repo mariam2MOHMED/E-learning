@@ -7,16 +7,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../../core/l10n/app_localizations.dart';
 import '../../../../../core/theme/app_colors.dart';
-
 class ChangePasswordScreen extends StatelessWidget {
   const ChangePasswordScreen({super.key});
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.of(context).pop();
+          },
           icon: const Icon(
             Icons.arrow_back_ios_rounded,
             color: AppColors.gray,
@@ -71,6 +71,7 @@ class ChangePasswordScreen extends StatelessWidget {
                   const SizedBox(height: 32.0),
                   ElevatedButton(
                     style: ElevatedButton.styleFrom(
+                      backgroundColor:state.isTyping?AppColors.blue: AppColors.black[40],
                       fixedSize: Size(MediaQuery.of(context).size.width, 50)
                     ),
                     onPressed: state.isTyping

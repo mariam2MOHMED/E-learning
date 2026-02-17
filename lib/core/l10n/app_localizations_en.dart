@@ -55,10 +55,28 @@ class AppLocalizationsEn extends AppLocalizations {
   String get updatePasswordSuccess => 'Password updated successfully';
 
   @override
+  String get explore => 'Explore';
+
+  @override
+  String get search => 'Search';
+
+  @override
+  String get survey => 'Survey';
+
+  @override
+  String get browse_by_subject => 'Browse by subject';
+
+  @override
   String get firstName => 'First name';
 
   @override
   String get enterFirstName => 'Enter first name';
+
+  @override
+  String get result => 'Result';
+
+  @override
+  String get profile => 'Profile';
 
   @override
   String get lastName => 'Last name';

@@ -17,10 +17,14 @@
   "username": "Username",
   "enterUsername": "Enter your username",
   "updatePasswordSuccess": "Password updated successfully",
-
+  "explore": "Explore",
+  "search": "Search",
+  "survey": "Survey",
+  "browse_by_subject": "Browse by subject",
   "firstName": "First name",
   "enterFirstName": "Enter first name",
-
+  "result": "Result",
+  "profile": "Profile",
   "lastName": "Last name",
   "enterLastName": "Enter last name",
 "remeberMe": "Remember me",
