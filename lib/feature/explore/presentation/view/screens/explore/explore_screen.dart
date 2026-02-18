@@ -34,7 +34,7 @@ class ExploreScreen extends StatelessWidget {
             AppLocalizations.of(context)!.browse_by_subject,
             style: Theme.of(context).textTheme.titleMedium,
           ),
-          const SizedBox(height: 24.0),
+
           const SubjectList(),
         ],
       ),

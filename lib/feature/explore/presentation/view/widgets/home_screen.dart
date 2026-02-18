@@ -1,4 +1,5 @@
 import 'package:elearning/core/theme/app_colors.dart';
+import 'package:elearning/feature/profile/presentation/view/screens/profile_screen.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../core/l10n/app_localizations.dart';
@@ -17,7 +18,7 @@ class _HomeScreenState extends State<HomeScreen> {
 List<Widget>screens=[
  const ExploreScreen(),
   Column(),
-  Column(),
+ const ProfileScreen(),
 ];
   @override
   Widget build(BuildContext context) {

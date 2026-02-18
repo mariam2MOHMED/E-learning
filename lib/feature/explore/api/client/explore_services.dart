@@ -4,6 +4,7 @@ import 'package:retrofit/http.dart';
 import 'package:dio/dio.dart';
 import 'package:retrofit/retrofit.dart';
 import '../../../../core/constants/end_point_constants.dart';
+import '../models/exam_by_subject_response.dart';
 part 'explore_services.g.dart';
 
 @RestApi(
@@ -15,5 +16,8 @@ abstract class ExploreServices{
   factory ExploreServices(Dio dio)=_ExploreServices;
   @GET(EndPointsConstants.subjectsEndPoint)
   Future<SubjectModel>getAllSubjects();
-
+  @GET("${EndPointsConstants.examBySubjectEndPoint}{subjectId}")
+  Future<ExamBySubjectResponse>getExamBySubject (
+      @Path("subjectId")String subjectId
+      );
 }

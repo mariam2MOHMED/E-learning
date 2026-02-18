@@ -8,6 +8,7 @@ import 'package:elearning/feature/explore/presentation/view/widgets/home_screen.
 import 'package:elearning/feature/profile/presentation/view/screens/change_password.dart';
 import 'package:flutter/material.dart';
 import '../../feature/auth/presentation/view/screens/verfiy_code_screen.dart';
+import '../../feature/explore/presentation/view/screens/exam_by_subject/exam_by_subject_screen.dart';
 import '../../feature/profile/presentation/view/screens/profile_screen.dart';
 import '../l10n/app_localizations.dart';
 import 'app_routes.dart';
@@ -20,6 +21,14 @@ abstract class Routes{
 
         return MaterialPageRoute(
           builder: (_) => const RegisterScreen(),
+
+        );
+      case AppRoutes.examBySubject:
+final subjectId=setting.arguments as String;
+        return MaterialPageRoute(
+          builder: (_) =>   ExamBySubjectScreen(
+            subjectId: subjectId,
+          )
 
         );
       case AppRoutes.home:

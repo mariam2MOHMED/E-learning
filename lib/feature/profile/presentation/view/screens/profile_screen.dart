@@ -6,11 +6,10 @@ import 'package:elearning/feature/profile/presentation/view_model/profile/profil
 import 'package:elearning/feature/profile/presentation/view_model/profile/profile_states.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
+import 'package:loading_animation_widget/loading_animation_widget.dart';
 import '../../../../../core/l10n/app_localizations.dart';
 import '../../../../../core/theme/app_colors.dart';
 import '../../view_model/profile/profile_events.dart';
-
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
 
@@ -46,7 +45,10 @@ class ProfileScreen extends StatelessWidget {
           BlocConsumer<ProfileCubit, ProfileStates>(builder: (context, state) {
             final cubit = context.read<ProfileCubit>();
             if (state.profileStatus.isLoading) {
-              return const Center(child: CircularProgressIndicator(),);
+              return  Center(child:
+              LoadingAnimationWidget
+                  .inkDrop(color: AppColors.blue, size: 50.0)
+              );
             } else if (state.profileStatus.isSuccess) {
               return
              Form(
@@ -57,13 +59,9 @@ class ProfileScreen extends StatelessWidget {
                  const UserProfileWidget(),
                  const SizedBox(height: 16.0,),
                  UserInfoWidget(
-
-                     userName:  cubit.userNameController,
-
-                     firstName:cubit.firstNameController,
-
-
-                     lastName:  cubit.lastNameController
+  userName:  cubit.userNameController,
+ firstName:cubit.firstNameController,
+ lastName:  cubit.lastNameController
 
                  ),
                  UserProfileInfo(

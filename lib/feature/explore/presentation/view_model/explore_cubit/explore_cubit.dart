@@ -1,5 +1,6 @@
 import 'package:elearning/core/enum/request_state.dart';
 import 'package:elearning/core/error/response_exceptions.dart';
+import 'package:elearning/feature/explore/domain/entity/exam_entity.dart';
 import 'package:elearning/feature/explore/domain/entity/subject_entity.dart';
 import 'package:elearning/feature/explore/domain/use_case/get_all_subjects_use_case.dart';
 import 'package:elearning/feature/explore/presentation/view_model/explore_cubit/explore_states.dart';
@@ -7,19 +8,48 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:injectable/injectable.dart';
 
 import '../../../../../core/result/result.dart';
+import '../../../domain/use_case/get_exam_by_subject_use_case.dart';
 import 'explore_event.dart';
 @injectable
 class ExploreCubit extends Cubit<ExploreState>{
-  ExploreCubit(this._allSubjectsUseCase):super(const ExploreState());
+  ExploreCubit(this._allSubjectsUseCase,
+      this._examBySubjectUseCase):super(const ExploreState());
   final GetAllSubjectsUseCase _allSubjectsUseCase;
+  final GetExamBySubjectUseCase _examBySubjectUseCase;
   Future<void>doIntent({required ExploreEvent intent})async{
     switch(intent){
 
       case GetAllSubjectEvent():
-     _getAllSubjects();
+     await _getAllSubjects();
+     break;
+   
+      case ExamBySubjectEvent():
+      _getExamBySubject(intent.subjectId);
     }
   }
-void _getAllSubjects() async {
+  Future<void> _getExamBySubject(String subjectId) async {
+    emit(state.copyWith(
+        examStatus: const StateStatus.loading()
+    ));
+    final result=await _examBySubjectUseCase.getExamBySubject(subjectId);
+    switch(result){
+
+
+    
+      case SuccessResult<ExamEntity>():
+       emit(
+         state.copyWith(
+           examStatus: StateStatus.success(result.successResult)
+         )
+       );
+      case FailedResult<ExamEntity>():
+        emit(state.copyWith(
+            examStatus:  StateStatus.failure(
+                ResponseException(message: result.error))
+        ));
+    }
+  }
+  Future<void> _getAllSubjects() async {
     emit(state.copyWith(
       subjectState: const StateStatus.loading()
     ));
