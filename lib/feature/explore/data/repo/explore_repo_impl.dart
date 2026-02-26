@@ -20,5 +20,10 @@ Future<Result<List<SubjectEntity>>> getAllSubjects() async{
 return await _dataSource.getExamBySubject(subjectId);
   }
 
+  @override
+  Future<Result<List<ExamEntity>>> getAllExams() async{
+   return await _dataSource.getAllExams();
+  }
+
 
 }

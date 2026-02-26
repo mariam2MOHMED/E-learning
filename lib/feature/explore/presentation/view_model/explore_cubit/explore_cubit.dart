@@ -2,6 +2,7 @@ import 'package:elearning/core/enum/request_state.dart';
 import 'package:elearning/core/error/response_exceptions.dart';
 import 'package:elearning/feature/explore/domain/entity/exam_entity.dart';
 import 'package:elearning/feature/explore/domain/entity/subject_entity.dart';
+import 'package:elearning/feature/explore/domain/use_case/get_all_exams_use_case.dart';
 import 'package:elearning/feature/explore/domain/use_case/get_all_subjects_use_case.dart';
 import 'package:elearning/feature/explore/presentation/view_model/explore_cubit/explore_states.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -13,9 +14,10 @@ import 'explore_event.dart';
 @injectable
 class ExploreCubit extends Cubit<ExploreState>{
   ExploreCubit(this._allSubjectsUseCase,
-      this._examBySubjectUseCase):super(const ExploreState());
+      this._examBySubjectUseCase,this._allExamsUseCase):super(const ExploreState());
   final GetAllSubjectsUseCase _allSubjectsUseCase;
   final GetExamBySubjectUseCase _examBySubjectUseCase;
+  final GetAllExamsUseCase _allExamsUseCase;
   Future<void>doIntent({required ExploreEvent intent})async{
     switch(intent){
 
@@ -25,6 +27,8 @@ class ExploreCubit extends Cubit<ExploreState>{
    
       case ExamBySubjectEvent():
       _getExamBySubject(intent.subjectId);
+      case GetAllExamsEvent():
+   _getAllExams();
     }
   }
   Future<void> _getExamBySubject(String subjectId) async {
@@ -68,4 +72,22 @@ class ExploreCubit extends Cubit<ExploreState>{
         ));
     }
 }
+
+  Future<void> _getAllExams()async {
+    emit(state.copyWith(
+      examsListStatus: const StateStatus.loading()
+    ));
+    final result=await _allExamsUseCase.getAllExams();
+    switch(result){
+
+      case SuccessResult<List<ExamEntity>>():
+        emit(state.copyWith(
+            examsListStatus:  StateStatus.success(result.successResult)
+        ));
+      case FailedResult<List<ExamEntity>>():
+        emit(state.copyWith(
+            examsListStatus:  StateStatus.failure(ResponseException(message: result.error))
+        ));
+    }
+  }
 }

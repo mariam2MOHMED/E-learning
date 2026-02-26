@@ -7,4 +7,6 @@ abstract interface class ExploreDataSource{
   Future<Result<ExamEntity>>getExamBySubject(
       String subjectId
       );
+  Future<Result<List<ExamEntity>>>getAllExams();
+
 }

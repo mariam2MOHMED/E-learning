@@ -14,16 +14,24 @@ class ExploreDataSourceImpl implements   ExploreDataSource{
   Future<Result<List<SubjectEntity>>>getAllSubjects()
 async {
 return safeCall(()async{
-  final subjects=await _exploreServices.getAllSubjects();
-  return subjects.subjects?.map((e)=>e.toEntity()).toList()??[];
+  final response=await _exploreServices.getAllSubjects();
+  return response.subjects?.map((e)=>e.toEntity()).toList()??[];
 });
   }
 
   @override
   Future<Result<ExamEntity>> getExamBySubject(String subjectId)async {
     return safeCall(()async{
-      final exam=await _exploreServices.getExamBySubject(subjectId);
-      return exam.exam!.toEntity();
+      final response=await _exploreServices.getExamBySubject(subjectId);
+      return response.exam!.toEntity();
+    });
+  }
+
+  @override
+  Future<Result<List<ExamEntity>>> getAllExams() {
+    return safeCall(()async{
+      final response=await _exploreServices.getAllExams();
+      return response.exams!.map((e)=>e.toEntity()).toList()??[];
     });
   }
 

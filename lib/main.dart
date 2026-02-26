@@ -20,7 +20,8 @@ void main() async{
   ChangeNotifierProvider.value(
     value: getIt<AppLanguage>(),
       child:  OnlineExamApp(
-        initialRoute: initialRoute,)));
+        initialRoute: initialRoute,
+      )));
 }
 
 
