@@ -60,8 +60,12 @@
   "resetPassword": "Reset Password",
   "newPassword": "New Password",
   "passwordResetSuccessfully": "Password reset successfully",
-  "editProfile": "Edit Profile"
-
-
+  "editProfile": "Edit Profile",
+  "low_level": "Low level",
+  "high_level": "High level",
+  "questions": "Question",
+  "minutes": "Minutes",
+  "from": "From",
+  "to": "To"
 
 }

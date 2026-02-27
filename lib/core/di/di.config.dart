@@ -42,6 +42,8 @@ import '../../feature/explore/data/repo/explore_repo_impl.dart' as _i495;
 import '../../feature/explore/domain/repo/explore_repo.dart' as _i183;
 import '../../feature/explore/domain/use_case/get_all_exams_use_case.dart'
     as _i2;
+import '../../feature/explore/domain/use_case/get_all_questions_use_case.dart'
+    as _i261;
 import '../../feature/explore/domain/use_case/get_all_subjects_use_case.dart'
     as _i212;
 import '../../feature/explore/domain/use_case/get_exam_by_subject_use_case.dart'
@@ -131,6 +133,9 @@ extension GetItInjectableX on _i174.GetIt {
     gh.factory<_i2.GetAllExamsUseCase>(
       () => _i2.GetAllExamsUseCase(gh<_i183.ExploreRepo>()),
     );
+    gh.factory<_i261.GetAllQuestionsUseCase>(
+      () => _i261.GetAllQuestionsUseCase(gh<_i183.ExploreRepo>()),
+    );
     gh.factory<_i212.GetAllSubjectsUseCase>(
       () => _i212.GetAllSubjectsUseCase(gh<_i183.ExploreRepo>()),
     );
@@ -146,15 +151,16 @@ extension GetItInjectableX on _i174.GetIt {
         gh<_i36.EditProfileUseCase>(),
       ),
     );
+    gh.factory<_i371.ChangePasswordCubit>(
+      () => _i371.ChangePasswordCubit(gh<_i1053.ChangePasswordUseCase>()),
+    );
     gh.factory<_i1059.ExploreCubit>(
       () => _i1059.ExploreCubit(
         gh<_i212.GetAllSubjectsUseCase>(),
         gh<_i952.GetExamBySubjectUseCase>(),
         gh<_i2.GetAllExamsUseCase>(),
+        gh<_i261.GetAllQuestionsUseCase>(),
       ),
-    );
-    gh.factory<_i371.ChangePasswordCubit>(
-      () => _i371.ChangePasswordCubit(gh<_i1053.ChangePasswordUseCase>()),
     );
     gh.factory<_i748.ForgetPasswordUseCase>(
       () => _i748.ForgetPasswordUseCase(gh<_i569.AuthRepo>()),

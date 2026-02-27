@@ -1,6 +1,7 @@
 import 'package:elearning/core/safe_api_call/safe_api_call.dart';
 import 'package:elearning/feature/explore/api/client/explore_services.dart';
 import 'package:elearning/feature/explore/domain/entity/exam_entity.dart';
+import 'package:elearning/feature/explore/domain/entity/question_entity.dart';
 import 'package:elearning/feature/explore/domain/entity/subject_entity.dart';
 import 'package:injectable/injectable.dart';
 
@@ -31,8 +32,16 @@ return safeCall(()async{
   Future<Result<List<ExamEntity>>> getAllExams() {
     return safeCall(()async{
       final response=await _exploreServices.getAllExams();
-      return response.exams!.map((e)=>e.toEntity()).toList()??[];
+      return response.exams!.map((e)=>e.toEntity()).toList();
     });
+  }
+
+  @override
+  Future<Result<List<QuestionEntity>>> getAllQuestions(String examId)async {
+   return safeCall(()async{
+     final response =await _exploreServices.getAllQuestions(examId);
+     return response.questions!.map((e)=>e.toEntity()).toList();
+   });
   }
 
 }

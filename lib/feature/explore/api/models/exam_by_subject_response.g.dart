@@ -12,14 +12,14 @@ ExamBySubjectResponse _$ExamBySubjectResponseFromJson(
   message: json['message'] as String?,
   exam: json['exam'] == null
       ? null
-      : Exam.fromJson(json['exam'] as Map<String, dynamic>),
+      : Exam1.fromJson(json['exam'] as Map<String, dynamic>),
 );
 
 Map<String, dynamic> _$ExamBySubjectResponseToJson(
   ExamBySubjectResponse instance,
 ) => <String, dynamic>{'message': instance.message, 'exam': instance.exam};
 
-Exam _$ExamFromJson(Map<String, dynamic> json) => Exam(
+Exam1 _$Exam1FromJson(Map<String, dynamic> json) => Exam1(
   Id: json['_id'] as String?,
   title: json['title'] as String?,
   duration: (json['duration'] as num?)?.toInt(),
@@ -29,7 +29,7 @@ Exam _$ExamFromJson(Map<String, dynamic> json) => Exam(
   createdAt: json['createdAt'] as String?,
 );
 
-Map<String, dynamic> _$ExamToJson(Exam instance) => <String, dynamic>{
+Map<String, dynamic> _$Exam1ToJson(Exam1 instance) => <String, dynamic>{
   '_id': instance.Id,
   'title': instance.title,
   'duration': instance.duration,

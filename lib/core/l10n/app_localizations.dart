@@ -445,6 +445,42 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Edit Profile'**
   String get editProfile;
+
+  /// No description provided for @low_level.
+  ///
+  /// In en, this message translates to:
+  /// **'Low level'**
+  String get low_level;
+
+  /// No description provided for @high_level.
+  ///
+  /// In en, this message translates to:
+  /// **'High level'**
+  String get high_level;
+
+  /// No description provided for @questions.
+  ///
+  /// In en, this message translates to:
+  /// **'Question'**
+  String get questions;
+
+  /// No description provided for @minutes.
+  ///
+  /// In en, this message translates to:
+  /// **'Minutes'**
+  String get minutes;
+
+  /// No description provided for @from.
+  ///
+  /// In en, this message translates to:
+  /// **'From'**
+  String get from;
+
+  /// No description provided for @to.
+  ///
+  /// In en, this message translates to:
+  /// **'To'**
+  String get to;
 }
 
 class _AppLocalizationsDelegate

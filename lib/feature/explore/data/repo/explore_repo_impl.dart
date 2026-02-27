@@ -1,6 +1,7 @@
 import 'package:elearning/core/result/result.dart';
 import 'package:elearning/feature/explore/data/data_source/explore_data_source.dart';
 import 'package:elearning/feature/explore/domain/entity/exam_entity.dart';
+import 'package:elearning/feature/explore/domain/entity/question_entity.dart';
 
 import 'package:elearning/feature/explore/domain/entity/subject_entity.dart';
 import 'package:injectable/injectable.dart';
@@ -23,6 +24,11 @@ return await _dataSource.getExamBySubject(subjectId);
   @override
   Future<Result<List<ExamEntity>>> getAllExams() async{
    return await _dataSource.getAllExams();
+  }
+
+  @override
+  Future<Result<List<QuestionEntity>>> getAllQuestions(String examId) async{
+return await _dataSource.getAllQuestions(examId);
   }
 
 

@@ -65,6 +65,12 @@
   "resetPassword": "إعادة تعيين كلمة المرور",
   "newPassword": "كلمة مرور جديدة",
   "passwordResetSuccessfully": "تم إعادة تعيين كلمة المرور بنجاح",
-  "editProfile": "تعديل الملف الشخصي"
+  "editProfile": "تعديل الملف الشخصي",
+  "low_level": "مستوى منخفض",
 
+  "high_level": "مستوى عالٍ",
+  "questions": "سؤال",
+  "minutes": "دقيقة",
+  "from": "من",
+  "to": "إلى"
 }

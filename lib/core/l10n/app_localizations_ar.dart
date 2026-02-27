@@ -186,4 +186,22 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get editProfile => 'تعديل الملف الشخصي';
+
+  @override
+  String get low_level => 'مستوى منخفض';
+
+  @override
+  String get high_level => 'مستوى عالٍ';
+
+  @override
+  String get questions => 'سؤال';
+
+  @override
+  String get minutes => 'دقيقة';
+
+  @override
+  String get from => 'من';
+
+  @override
+  String get to => 'إلى';
 }

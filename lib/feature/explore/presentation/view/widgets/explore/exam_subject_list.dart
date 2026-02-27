@@ -1,3 +1,4 @@
+import 'package:elearning/core/route/app_routes.dart';
 import 'package:elearning/feature/explore/presentation/view/widgets/explore/subject_item.dart';
 import 'package:elearning/feature/explore/presentation/view_model/explore_cubit/explore_cubit.dart';
 import 'package:elearning/feature/explore/presentation/view_model/explore_cubit/explore_states.dart';
@@ -10,13 +11,26 @@ class ExamSubjectList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<ExploreCubit,ExploreState>(builder: (context,state){
+      // final exams = state.examsListStatus.data;
+      //
+      // if (exams == null || exams.isEmpty) {
+      //   return const SizedBox();
+      // }
       return ListView.separated(
         padding: EdgeInsets.zero,
           shrinkWrap: true,
           physics: const NeverScrollableScrollPhysics(),
           itemBuilder: (context,index){
-        return ExamSubjectItem(image: images[index],
-            title: state.examsListStatus.data![index].title);
+        return
+         GestureDetector(
+           onTap: (){
+             Navigator.of(context).pushNamed(AppRoutes.subjectDetails,
+             arguments:  state.examsListStatus.data![index]
+             );
+           },
+       child:  ExamSubjectItem(image: images[index],
+           title: state.examsListStatus.data![index].title),
+         );
       },
 
           separatorBuilder:  (context,index){

@@ -1,6 +1,7 @@
 import 'package:elearning/core/enum/request_state.dart';
 import 'package:elearning/core/error/response_exceptions.dart';
 import 'package:elearning/feature/explore/domain/entity/exam_entity.dart';
+import 'package:elearning/feature/explore/domain/entity/question_entity.dart';
 import 'package:elearning/feature/explore/domain/entity/subject_entity.dart';
 import 'package:elearning/feature/explore/domain/use_case/get_all_exams_use_case.dart';
 import 'package:elearning/feature/explore/domain/use_case/get_all_subjects_use_case.dart';
@@ -9,15 +10,19 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:injectable/injectable.dart';
 
 import '../../../../../core/result/result.dart';
+import '../../../domain/use_case/get_all_questions_use_case.dart';
 import '../../../domain/use_case/get_exam_by_subject_use_case.dart';
 import 'explore_event.dart';
 @injectable
 class ExploreCubit extends Cubit<ExploreState>{
-  ExploreCubit(this._allSubjectsUseCase,
-      this._examBySubjectUseCase,this._allExamsUseCase):super(const ExploreState());
+   ExploreCubit(this._allSubjectsUseCase,
+      this._examBySubjectUseCase,
+       this._allExamsUseCase,
+       this._allQuestionsUseCase):super(const ExploreState());
   final GetAllSubjectsUseCase _allSubjectsUseCase;
   final GetExamBySubjectUseCase _examBySubjectUseCase;
   final GetAllExamsUseCase _allExamsUseCase;
+  final GetAllQuestionsUseCase _allQuestionsUseCase;
   Future<void>doIntent({required ExploreEvent intent})async{
     switch(intent){
 
@@ -29,6 +34,8 @@ class ExploreCubit extends Cubit<ExploreState>{
       _getExamBySubject(intent.subjectId);
       case GetAllExamsEvent():
    _getAllExams();
+      case GetAllQuestionsEvent():
+        _getAllQuestions(intent.examId);
     }
   }
   Future<void> _getExamBySubject(String subjectId) async {
@@ -87,6 +94,24 @@ class ExploreCubit extends Cubit<ExploreState>{
       case FailedResult<List<ExamEntity>>():
         emit(state.copyWith(
             examsListStatus:  StateStatus.failure(ResponseException(message: result.error))
+        ));
+    }
+  }
+
+  Future<void> _getAllQuestions(String examId) async{
+    emit(state.copyWith(
+      questionsListStatus: const StateStatus.loading()
+    ));
+    final result=await _allQuestionsUseCase.getAllQuestions(examId);
+    switch(result){
+
+      case SuccessResult<List<QuestionEntity>>():
+        emit(state.copyWith(
+            questionsListStatus:  StateStatus.success(result.successResult)
+        ));
+      case FailedResult<List<QuestionEntity>>():
+        emit(state.copyWith(
+            questionsListStatus:  StateStatus.failure(ResponseException(message: result.error))
         ));
     }
   }

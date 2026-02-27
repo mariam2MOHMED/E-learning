@@ -12,5 +12,7 @@ abstract class EndPointsConstants{
   static const String editProfileEndPoint="auth/editProfile";
   static const String examBySubjectEndPoint="exams/";
   static const String examsPoint="exams";
+//questions
+  static const String questionsEndPoint="questions";
 
 }

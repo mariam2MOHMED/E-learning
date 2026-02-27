@@ -13,7 +13,7 @@ ExamsRespoonseDto _$ExamsRespoonseDtoFromJson(Map<String, dynamic> json) =>
           ? null
           : Metadata.fromJson(json['metadata'] as Map<String, dynamic>),
       exams: (json['exams'] as List<dynamic>?)
-          ?.map((e) => Exams.fromJson(e as Map<String, dynamic>))
+          ?.map((e) => Exam.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
 
@@ -36,7 +36,7 @@ Map<String, dynamic> _$MetadataToJson(Metadata instance) => <String, dynamic>{
   'limit': instance.limit,
 };
 
-Exams _$ExamsFromJson(Map<String, dynamic> json) => Exams(
+Exam _$ExamFromJson(Map<String, dynamic> json) => Exam(
   Id: json['_id'] as String?,
   title: json['title'] as String?,
   duration: (json['duration'] as num?)?.toInt(),
@@ -46,7 +46,7 @@ Exams _$ExamsFromJson(Map<String, dynamic> json) => Exams(
   createdAt: json['createdAt'] as String?,
 );
 
-Map<String, dynamic> _$ExamsToJson(Exams instance) => <String, dynamic>{
+Map<String, dynamic> _$ExamToJson(Exam instance) => <String, dynamic>{
   '_id': instance.Id,
   'title': instance.title,
   'duration': instance.duration,

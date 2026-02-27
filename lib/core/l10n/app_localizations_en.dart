@@ -186,4 +186,22 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get editProfile => 'Edit Profile';
+
+  @override
+  String get low_level => 'Low level';
+
+  @override
+  String get high_level => 'High level';
+
+  @override
+  String get questions => 'Question';
+
+  @override
+  String get minutes => 'Minutes';
+
+  @override
+  String get from => 'From';
+
+  @override
+  String get to => 'To';
 }

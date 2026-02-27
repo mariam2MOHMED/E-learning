@@ -1,11 +1,11 @@
 import 'package:elearning/feature/explore/api/models/subject_model.dart';
 import 'package:injectable/injectable.dart';
-import 'package:retrofit/http.dart';
 import 'package:dio/dio.dart';
 import 'package:retrofit/retrofit.dart';
 import '../../../../core/constants/end_point_constants.dart';
 import '../models/exam_by_subject_response.dart';
 import '../models/exams_response_dto.dart';
+import '../models/question/question_response_dto.dart';
 part 'explore_services.g.dart';
 
 @RestApi(
@@ -23,4 +23,8 @@ abstract class ExploreServices{
       );
   @GET(EndPointsConstants.examsPoint)
   Future<ExamsRespoonseDto>getAllExams();
+  @GET(EndPointsConstants.questionsEndPoint)
+  Future<QuestionDtoResponse>getAllQuestions(
+      @Query("examId")String examId
+      );
 }

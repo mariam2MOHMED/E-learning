@@ -4,11 +4,13 @@ import 'package:elearning/feature/auth/presentation/view/screens/forget_password
 import 'package:elearning/feature/auth/presentation/view/screens/login_screen.dart';
 import 'package:elearning/feature/auth/presentation/view/screens/register_screen.dart';
 import 'package:elearning/feature/auth/presentation/view/screens/reset_password_screen.dart';
+import 'package:elearning/feature/explore/domain/entity/exam_entity.dart';
+import 'package:elearning/feature/explore/presentation/view/screens/exam_by_subject/subject_detials_screen.dart';
+import 'package:elearning/feature/explore/presentation/view/screens/start_exam/start_exam_screen.dart';
 import 'package:elearning/feature/explore/presentation/view/widgets/home_screen.dart';
 import 'package:elearning/feature/profile/presentation/view/screens/change_password.dart';
 import 'package:flutter/material.dart';
 import '../../feature/auth/presentation/view/screens/verfiy_code_screen.dart';
-import '../../feature/explore/presentation/view/screens/exam_by_subject/exam_by_subject_screen.dart';
 import '../../feature/profile/presentation/view/screens/profile_screen.dart';
 import '../l10n/app_localizations.dart';
 import 'app_routes.dart';
@@ -23,18 +25,19 @@ abstract class Routes{
           builder: (_) => const RegisterScreen(),
 
         );
-      case AppRoutes.examBySubject:
-final subjectId=setting.arguments as String;
-        return MaterialPageRoute(
-          builder: (_) =>   ExamBySubjectScreen(
-            subjectId: subjectId,
-          )
 
-        );
       case AppRoutes.home:
 
         return MaterialPageRoute(
           builder: (_) => const HomeScreen(),
+
+        );
+      case AppRoutes.subjectDetails:
+final exam=setting.arguments as ExamEntity;
+        return MaterialPageRoute(
+          builder: (_) => SubjectDetailsScreen(
+            examEntity: exam,
+          ),
 
         );
       case AppRoutes.login:
@@ -53,6 +56,12 @@ final subjectId=setting.arguments as String;
 
         return MaterialPageRoute(
           builder: (_) => const ChangePasswordScreen(),
+
+        );
+      case AppRoutes.startExam:
+final examEntity=setting.arguments as ExamEntity;
+        return MaterialPageRoute(
+          builder: (_) =>  StartExamScreen(examEntity: examEntity),
 
         );
       case AppRoutes.forgetPassword:

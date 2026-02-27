@@ -8,7 +8,7 @@ class ExamBySubjectResponse {
   @JsonKey(name: "message")
   final String? message;
   @JsonKey(name: "exam")
-  final Exam? exam;
+  final Exam1? exam;
 
   ExamBySubjectResponse ({
     this.message,
@@ -25,7 +25,7 @@ class ExamBySubjectResponse {
 }
 
 @JsonSerializable()
-class Exam {
+class Exam1 {
   @JsonKey(name: "_id")
   final String? Id;
   @JsonKey(name: "title")
@@ -41,7 +41,7 @@ class Exam {
   @JsonKey(name: "createdAt")
   final String? createdAt;
 
-  Exam ({
+  Exam1 ({
     this.Id,
     this.title,
     this.duration,
@@ -51,12 +51,12 @@ class Exam {
     this.createdAt,
   });
 
-  factory Exam.fromJson(Map<String, dynamic> json) {
-    return _$ExamFromJson(json);
+  factory Exam1.fromJson(Map<String, dynamic> json) {
+    return _$Exam1FromJson(json);
   }
 
   Map<String, dynamic> toJson() {
-    return _$ExamToJson(this);
+    return _$Exam1ToJson(this);
   }
   ExamEntity toEntity(){
     return ExamEntity(id: Id!, title: title!,

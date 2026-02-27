@@ -10,7 +10,7 @@ class ExamsRespoonseDto {
   @JsonKey(name: "metadata")
   final Metadata? metadata;
   @JsonKey(name: "exams")
-  final List<Exams>? exams;
+  final List<Exam>? exams;
 
   ExamsRespoonseDto ({
     this.message,
@@ -52,7 +52,7 @@ class Metadata {
 }
 
 @JsonSerializable()
-class Exams {
+class Exam {
   @JsonKey(name: "_id")
   final String? Id;
   @JsonKey(name: "title")
@@ -68,7 +68,7 @@ class Exams {
   @JsonKey(name: "createdAt")
   final String? createdAt;
 
-  Exams ({
+  Exam ({
     this.Id,
     this.title,
     this.duration,
@@ -78,12 +78,12 @@ class Exams {
     this.createdAt,
   });
 
-  factory Exams.fromJson(Map<String, dynamic> json) {
-    return _$ExamsFromJson(json);
+  factory Exam.fromJson(Map<String, dynamic> json) {
+    return _$ExamFromJson(json);
   }
 
   Map<String, dynamic> toJson() {
-    return _$ExamsToJson(this);
+    return _$ExamToJson(this);
   }
   ExamEntity toEntity(){
     return ExamEntity(id: Id!,

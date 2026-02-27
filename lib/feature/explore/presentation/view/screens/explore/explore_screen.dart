@@ -41,15 +41,18 @@ class ExploreScreen extends StatelessWidget {
             style: Theme.of(context).textTheme.titleMedium,
           ),
          BlocBuilder<ExploreCubit,ExploreState>(builder: (context,state){
-         return  ConditionalBuilder(condition: state.examsListStatus.isLoading &&
-             state.subjectState.isLoading, builder: (context){
+         return  ConditionalBuilder(condition: state.examsListStatus.isLoading ||
+             state.subjectState.isLoading,
+
+             builder: (context){
            return
               Center(child:  Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   SizedBox(height: MediaQuery.of(context).size.height * 0.3),
-                  LoadingAnimationWidget.inkDrop(color: AppColors.blue, size: 50.0),
+                  LoadingAnimationWidget.inkDrop(color: AppColors.blue,
+                      size: 50.0),
                 ],
               ),);
          }, fallback: (context){

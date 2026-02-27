@@ -12,6 +12,7 @@ abstract class AppRoutes{
 
   static const String changePassword="/changePassword";
   static const String examBySubject="/examBySubject";
+  static const String subjectDetails="/subjectDetails";
 
-
+  static const String startExam="/startExam";
 }
