@@ -204,4 +204,30 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get to => 'إلى';
+
+  @override
+  String get start => 'ابدء';
+
+  @override
+  String get next => 'التالى ';
+
+  @override
+  String get back => 'السابق';
+
+  @override
+  String get instructions => 'التعليمات';
+
+  @override
+  String get select_one_answer => 'يمكنك اختيار إجابة واحدة فقط لكل سؤال.';
+
+  @override
+  String get review_before_submit =>
+      'تأكد من مراجعة إجاباتك قبل تسليم الامتحان.';
+
+  @override
+  String get no_refresh => 'لا تقم بتحديث الصفحة أو إغلاقها أثناء الامتحان.';
+
+  @override
+  String get no_cheating =>
+      'أي شكل من أشكال الغش سيؤدي إلى استبعادك من الامتحان.';
 }

@@ -204,4 +204,32 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get to => 'To';
+
+  @override
+  String get start => 'Start';
+
+  @override
+  String get next => 'Next';
+
+  @override
+  String get back => 'Back';
+
+  @override
+  String get instructions => 'Instructions';
+
+  @override
+  String get select_one_answer =>
+      '● You can select only one answer for each question.';
+
+  @override
+  String get review_before_submit =>
+      '● Make sure to review your answers before submitting the exam.';
+
+  @override
+  String get no_refresh =>
+      '● Do not refresh or close the page during the exam.';
+
+  @override
+  String get no_cheating =>
+      '● Any form of cheating will result in disqualification.';
 }

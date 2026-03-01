@@ -46,12 +46,14 @@
   "enterPhoneNumber": "أدخل رقم الهاتف",
   "registerSuccess": "تم إنشاء الحساب بنجاح",
   "loginSuccess": "تم تسجيل الدخول بنجاح",
-
+  "instructions": "التعليمات",
   "signupButton": "إنشاء حساب",
   "alreadyHaveAccount": "لديك حساب بالفعل؟",
   "forgetPassword": "نسيت كلمة المرور",
   "forgetPasswordDesc": "من فضلك أدخل البريد الإلكتروني المرتبط بحسابك",
-
+  "start": "ابدء",
+  "next": "التالى ",
+  "back": "السابق",
   "continueWord": "متابعة",
   "enterEmailSentence": "من فضلك أدخل البريد الإلكتروني /n المرتبط بحسابك",
   "emailSentSuccessfully": "تم إرسال البريد الإلكتروني بنجاح",
@@ -67,6 +69,10 @@
   "passwordResetSuccessfully": "تم إعادة تعيين كلمة المرور بنجاح",
   "editProfile": "تعديل الملف الشخصي",
   "low_level": "مستوى منخفض",
+  "select_one_answer": "يمكنك اختيار إجابة واحدة فقط لكل سؤال.",
+  "review_before_submit": "تأكد من مراجعة إجاباتك قبل تسليم الامتحان.",
+  "no_refresh": "لا تقم بتحديث الصفحة أو إغلاقها أثناء الامتحان.",
+  "no_cheating": "أي شكل من أشكال الغش سيؤدي إلى استبعادك من الامتحان.",
 
   "high_level": "مستوى عالٍ",
   "questions": "سؤال",

@@ -17,7 +17,6 @@ abstract class AppTheme {
         ),
       ),
       textTheme: const TextTheme(
-
         titleMedium: TextStyle(
           fontSize: FontSize.s20,
           fontWeight: FontWeightManager.medium,
@@ -44,7 +43,7 @@ abstract class AppTheme {
             color: AppColors.black
         ),
         headlineSmall: TextStyle(
-            fontSize: FontSize.s13,
+            fontSize: FontSize.s14,
             fontWeight: FontWeightManager.medium,
             color: AppColors.black
         ),
@@ -53,6 +52,12 @@ abstract class AppTheme {
           fontWeight: FontWeightManager.medium,
           color: AppColors.gray,
         ),
+        labelMedium: TextStyle(
+          fontSize: FontSize.s16,
+          fontWeight: FontWeightManager.bold,
+          color: AppColors.blue,
+        )
+
 
       ),
       inputDecorationTheme: InputDecorationTheme(

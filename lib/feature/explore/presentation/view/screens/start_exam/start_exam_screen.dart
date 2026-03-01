@@ -1,7 +1,11 @@
+import 'package:elearning/core/route/app_routes.dart';
 import 'package:elearning/feature/explore/domain/entity/exam_entity.dart';
+import 'package:elearning/feature/explore/presentation/view/widgets/start_exam/exam_description_widget.dart';
 import 'package:flutter/material.dart';
 
+import '../../../../../../core/l10n/app_localizations.dart';
 import '../../../../../../core/theme/app_colors.dart';
+import '../../widgets/start_exam/instructions_exam.dart';
 
 class StartExamScreen extends StatelessWidget {
   const StartExamScreen({super.key,
@@ -12,7 +16,9 @@ final ExamEntity examEntity;
     return Scaffold(
    appBar: AppBar(
      leading: IconButton(
-       onPressed: () {},
+       onPressed: () {
+         Navigator.of(context).pop();
+       },
        icon: const Icon(
          Icons.arrow_back_ios_rounded,
          color: AppColors.gray,
@@ -20,17 +26,32 @@ final ExamEntity examEntity;
        ),
      ),
    ),
-      body: Column(
-        children: [
-Row(
-
+      body:
+Column(
   children: [
-    Image.asset("assets/images/Profit.png", width: 60.0, height: 80.0,
-        fit: BoxFit.cover),
+    ExamDescriptionWidget(examEntity: examEntity),
+    Container(
+      width: MediaQuery.of(context).size.width,
+      height: 1.5,
+      color: AppColors.lightPurple,
+      margin:const  EdgeInsetsDirectional.symmetric(
+        vertical: 16.0
+      ),
+    ),
+    const InstructionsExam(),
+    const SizedBox(height: 16.0),
+    Padding(padding: const EdgeInsetsDirectional.symmetric(horizontal: 16.0),
+    child: ElevatedButton(
+        style: ElevatedButton.styleFrom(
+            backgroundColor: AppColors.blue,
+            fixedSize: Size(MediaQuery.of(context).size.width, 50)
+        ),
+        onPressed: (){
+Navigator.of(context).pushNamed(AppRoutes.exam,arguments: examEntity);
+        }, child: Text(AppLocalizations.of(context)!.start)),)
+
   ],
 )
-        ],
-      ),
     );
   }
 }

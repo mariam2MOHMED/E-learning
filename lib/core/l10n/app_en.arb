@@ -66,6 +66,14 @@
   "questions": "Question",
   "minutes": "Minutes",
   "from": "From",
-  "to": "To"
+  "to": "To",
+  "start": "Start",
+"next": "Next",
+  "back": "Back",
+  "instructions": "Instructions",
+  "select_one_answer": "● You can select only one answer for each question.",
+  "review_before_submit": "● Make sure to review your answers before submitting the exam.",
+  "no_refresh": "● Do not refresh or close the page during the exam.",
+  "no_cheating": "● Any form of cheating will result in disqualification."
 
 }

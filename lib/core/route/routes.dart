@@ -5,6 +5,7 @@ import 'package:elearning/feature/auth/presentation/view/screens/login_screen.da
 import 'package:elearning/feature/auth/presentation/view/screens/register_screen.dart';
 import 'package:elearning/feature/auth/presentation/view/screens/reset_password_screen.dart';
 import 'package:elearning/feature/explore/domain/entity/exam_entity.dart';
+import 'package:elearning/feature/explore/presentation/view/screens/exam/exam_screen.dart';
 import 'package:elearning/feature/explore/presentation/view/screens/exam_by_subject/subject_detials_screen.dart';
 import 'package:elearning/feature/explore/presentation/view/screens/start_exam/start_exam_screen.dart';
 import 'package:elearning/feature/explore/presentation/view/widgets/home_screen.dart';
@@ -52,6 +53,14 @@ final exam=setting.arguments as ExamEntity;
           builder: (_) => const ProfileScreen(),
 
         );
+      case AppRoutes.exam:
+final exam=setting.arguments as ExamEntity;
+    return MaterialPageRoute(
+    builder: (_) =>  ExamScreen(examEntity: exam),
+
+    );
+
+
       case AppRoutes.changePassword:
 
         return MaterialPageRoute(

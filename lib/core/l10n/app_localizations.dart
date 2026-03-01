@@ -481,6 +481,54 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'To'**
   String get to;
+
+  /// No description provided for @start.
+  ///
+  /// In en, this message translates to:
+  /// **'Start'**
+  String get start;
+
+  /// No description provided for @next.
+  ///
+  /// In en, this message translates to:
+  /// **'Next'**
+  String get next;
+
+  /// No description provided for @back.
+  ///
+  /// In en, this message translates to:
+  /// **'Back'**
+  String get back;
+
+  /// No description provided for @instructions.
+  ///
+  /// In en, this message translates to:
+  /// **'Instructions'**
+  String get instructions;
+
+  /// No description provided for @select_one_answer.
+  ///
+  /// In en, this message translates to:
+  /// **'● You can select only one answer for each question.'**
+  String get select_one_answer;
+
+  /// No description provided for @review_before_submit.
+  ///
+  /// In en, this message translates to:
+  /// **'● Make sure to review your answers before submitting the exam.'**
+  String get review_before_submit;
+
+  /// No description provided for @no_refresh.
+  ///
+  /// In en, this message translates to:
+  /// **'● Do not refresh or close the page during the exam.'**
+  String get no_refresh;
+
+  /// No description provided for @no_cheating.
+  ///
+  /// In en, this message translates to:
+  /// **'● Any form of cheating will result in disqualification.'**
+  String get no_cheating;
 }
 
 class _AppLocalizationsDelegate

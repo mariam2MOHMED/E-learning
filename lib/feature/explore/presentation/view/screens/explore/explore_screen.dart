@@ -42,7 +42,9 @@ class ExploreScreen extends StatelessWidget {
           ),
          BlocBuilder<ExploreCubit,ExploreState>(builder: (context,state){
          return  ConditionalBuilder(condition: state.examsListStatus.isLoading ||
-             state.subjectState.isLoading,
+             state.subjectState.isLoading ,
+             // ||state.subjectState.data==null ||
+             // state.examsListStatus.data==null,
 
              builder: (context){
            return

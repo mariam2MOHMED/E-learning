@@ -27,7 +27,6 @@ void main() async{
 
 class OnlineExamApp extends StatelessWidget {
   final bool? initialRoute;
-
   const OnlineExamApp({super.key, required this.initialRoute});
 
   @override
@@ -38,7 +37,7 @@ class OnlineExamApp extends StatelessWidget {
       theme: AppTheme.lightTheme,
       debugShowCheckedModeBanner: false,
       initialRoute:
-  initialRoute != null ? AppRoutes.home:
+initialRoute != null ? AppRoutes.home:
       AppRoutes.login,
 
       locale: Locale(appLanguage.selectedLocal),
