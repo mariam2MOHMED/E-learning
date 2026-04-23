@@ -1,3 +1,4 @@
+import 'package:device_preview/device_preview.dart';
 import 'package:elearning/core/constants/constants.dart';
 import 'package:elearning/core/route/app_routes.dart';
 import 'package:elearning/core/route/routes.dart';
@@ -17,11 +18,13 @@ void main() async{
       SharedPreferencesHelper().getBool(key: Constants.isRemember) ?? false;
 
   runApp(
-  ChangeNotifierProvider.value(
+DevicePreview(builder: (_)=>  ChangeNotifierProvider.value(
     value: getIt<AppLanguage>(),
-      child:  OnlineExamApp(
-        initialRoute: initialRoute,
-      )));
+    child:  OnlineExamApp(
+      initialRoute: initialRoute,
+    )))
+  
+  );
 }
 
 
@@ -37,7 +40,7 @@ class OnlineExamApp extends StatelessWidget {
       theme: AppTheme.lightTheme,
       debugShowCheckedModeBanner: false,
       initialRoute:
-initialRoute != null ? AppRoutes.home:
+//initialRoute != null ? AppRoutes.home:
       AppRoutes.login,
 
       locale: Locale(appLanguage.selectedLocal),

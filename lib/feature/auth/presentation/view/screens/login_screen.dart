@@ -103,6 +103,11 @@ onChanged: (_){
   if (state.loginRequest.isSuccess){
     ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(content: Text(AppLocalizations.of(context)!.loginSuccess)));
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (context.mounted) {
+        Navigator.pushReplacementNamed(context, AppRoutes.home);
+      }
+    });
 
   }
   if (state.loginRequest.isFailure){

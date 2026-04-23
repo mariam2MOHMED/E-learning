@@ -2,6 +2,7 @@ import 'package:elearning/feature/explore/domain/entity/answer_entity.dart';
 import 'package:elearning/feature/explore/domain/entity/question_entity.dart';
 import 'package:json_annotation/json_annotation.dart';
 
+import '../../../domain/entity/exam_entity.dart';
 import '../exams_response_dto.dart';
 
 part 'question_response_dto.g.dart';
@@ -64,10 +65,26 @@ class Questions {
   Map<String, dynamic> toJson() {
     return _$QuestionsToJson(this);
   }
-  QuestionEntity  toEntity(){
-    return QuestionEntity(id: Id!, question: question!,
-        answers: answers!.map((e)=>e.toEntity()).toList(),
-        type: type!, correct: correct!, exam: exam!.toEntity(),);
+  QuestionEntity toEntity() {
+    return QuestionEntity(
+      id: Id ?? '',
+      question: question ?? '',
+      answers: (answers ?? [])
+          .map((e) => e.toEntity())
+          .toList(),
+      type: type ?? '',
+      correct: correct ?? '',
+      exam: exam?.toEntity() ??
+          const ExamEntity(
+            id: '',
+            title: '',
+            duration: 0,
+            subjectId: '',
+            numberOfQuestions: 0,
+            active: false,
+            createdAt: '',
+          ),
+    );
   }
 }
 

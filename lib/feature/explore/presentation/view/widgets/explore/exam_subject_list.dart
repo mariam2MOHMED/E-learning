@@ -28,7 +28,7 @@ class ExamSubjectList extends StatelessWidget {
              arguments:  state.examsListStatus.data![index]
              );
            },
-       child:  ExamSubjectItem(image: images[index],
+       child:  ExamSubjectItem(image: images[index]??"",
            title: state.examsListStatus.data![index].title),
          );
       },

@@ -65,8 +65,13 @@ class ExamSubjectItem extends StatelessWidget {
   }
 }
 List<String>images=[
-  "https://static.vecteezy.com/system/resources/previews/027/127/463/original/javascript-logo-javascript-icon-transparent-free-png.png",
-  "https://cdn.freebiesupply.com/logos/large/2x/css-3-logo-png-transparent.png",
-  "https://w7.pngwing.com/pngs/390/229/png-transparent-logo-html5-brand-design-text-logo-number.png",
-  "https://cdn.freebiesupply.com/logos/large/2x/react-1-logo-png-transparent.png"
+  "https://exam.elevateegy.com/uploads/categories/seeder-javascript.png",
+  "https://exam.elevateegy.com/uploads/categories/seeder-python.png",
+  "https://exam.elevateegy.com/uploads/categories/seeder-html.png",
+  "https://exam.elevateegy.com/uploads/categories/seeder-dsa.png",
+  "https://exam.elevateegy.com/uploads/categories/seeder-react.png",
+  "https://exam.elevateegy.com/uploads/categories/seeder-nodejs.png",
+  "https://exam.elevateegy.com/uploads/categories/seeder-database.png",
+  "https://exam.elevateegy.com/uploads/categories/seeder-git.png",
+  "https://exam.elevateegy.com/uploads/categories/seeder-react.png",
 ];
